@@ -123,7 +123,7 @@ ul { list-style: none; }
     height: 100%;             /* fill column space after title */
     min-height: 0;
     object-fit: cover;        /* square image cropped to fit column */
-    object-position: center 25%;  /* show heads near top */
+    object-position: center 80%;  /* show people in bottom of asset image */
     margin-top: clamp(4px, 0.5vw, 12px);
     display: block;
 }
