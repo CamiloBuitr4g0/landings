@@ -62,7 +62,7 @@ ul { list-style: none; }
 .hero {
     position: relative;
     min-height: 720px;
-    background-image: url('https://api.builder.io/api/v1/image/assets/TEMP/add5c7e51c598025e0c12efd6ac17d64411bf419?placeholderIfAbsent=true');
+    background-image: url('assets/hero-bg.png');
     background-size: cover;
     background-position: center;
     padding: 60px 40px 40px;
@@ -252,10 +252,22 @@ ul { list-style: none; }
 
 /* ==================== AWARDS ==================== */
 .awards {
-    padding: 30px 0;
+    padding: 40px 0;
     background: #fff;
 }
-.awards img { width: 100%; max-width: 1500px; margin: 0 auto; }
+.awards-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+.awards-row img {
+    max-height: 100px;
+    width: auto;
+    object-fit: contain;
+    flex: 0 1 auto;
+}
 
 /* ==================== NAVY (WHY WORK WITH US) ==================== */
 .navy-section {
@@ -380,7 +392,20 @@ ul { list-style: none; }
     margin-bottom: 30px;
     letter-spacing: 1px;
 }
-.testi-strip { width: 100%; max-width: 1500px; margin: 0 auto 50px; }
+.testi-strip {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 30px;
+    flex-wrap: wrap;
+    max-width: 1500px;
+    margin: 0 auto 50px;
+}
+.testi-strip img {
+    max-height: 90px;
+    width: auto;
+    object-fit: contain;
+}
 .testi-video {
     width: 100%;
     max-width: 900px;
