@@ -87,12 +87,12 @@ ul { list-style: none; }
     z-index: 2;
     max-width: 1600px;
     margin: 0 auto;
-    padding: 30px 40px 0;
+    padding: clamp(20px, 2vw, 40px) clamp(20px, 2.5vw, 50px);
     display: grid;
-    grid-template-columns: 1fr minmax(280px, 33%);
-    column-gap: 30px;
-    align-items: start;
-    min-height: clamp(420px, 50vw, 820px);
+    grid-template-columns: 1fr minmax(300px, 38%);
+    column-gap: clamp(20px, 2.5vw, 50px);
+    align-items: stretch;
+    min-height: clamp(440px, 48vw, 820px);
 }
 
 /* LEFT: title (top) + couple (fills remaining space) */
@@ -128,35 +128,43 @@ ul { list-style: none; }
     display: block;
 }
 
-/* RIGHT: yellow form */
+/* RIGHT: yellow form — fills full hero height like in Figma */
 .hero-form {
     background: var(--yellow);
-    padding: clamp(20px, 1.6vw, 30px) clamp(20px, 1.5vw, 30px);
+    padding: clamp(24px, 2vw, 42px) clamp(22px, 1.8vw, 36px);
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     box-shadow: 0 8px 24px rgba(0,0,0,0.2);
-    margin-top: 0;
-    align-self: start;
+    margin: 0;
     width: 100%;
+    height: 100%;
+    align-self: stretch;
+    box-sizing: border-box;
 }
 .hero-form label {
+    display: block;
     font-family: 'Inter', sans-serif;
-    font-size: clamp(15px, 1.1vw, 22px);
+    font-size: clamp(16px, 1.25vw, 24px);
     font-weight: 700;
     color: #000;
-    margin-bottom: 8px;
+    margin: 0 0 clamp(8px, 0.6vw, 12px);
+    line-height: 1;
 }
+.hero-form .field { display: block; }
 .hero-form label + input,
 .hero-form label + select,
 .hero-form label + textarea,
-.hero-form label + .phone-row { margin-bottom: clamp(14px, 1.2vw, 22px); }
+.hero-form label + .phone-row {
+    margin-bottom: clamp(12px, 1vw, 20px);
+}
 
 .hero-form input,
 .hero-form textarea,
 .hero-form select {
     background: #fff;
     border: none;
-    padding: clamp(12px, 1vw, 18px) 12px;
+    padding: 0 14px;
     font-size: clamp(14px, 1vw, 18px);
     color: #000;
     width: 100%;
@@ -164,11 +172,13 @@ ul { list-style: none; }
     border-radius: 0;
     font-family: 'Inter', sans-serif;
     box-sizing: border-box;
-    min-height: clamp(44px, 3.5vw, 64px);
+    height: clamp(44px, 3.34vw, 64px);  /* Figma input height */
 }
 .hero-form textarea {
     resize: none;
-    min-height: clamp(80px, 6.5vw, 126px);
+    height: clamp(80px, 6.56vw, 126px);  /* Figma textarea height */
+    padding: 12px 14px;
+    line-height: 1.4;
 }
 
 .phone-row {
@@ -176,26 +186,27 @@ ul { list-style: none; }
     gap: 10px;
 }
 .phone-row select {
-    flex: 0 0 32%;
+    flex: 0 0 30%;
     background: #fff;
-    padding: clamp(12px, 1vw, 18px) 8px;
 }
 .phone-row input { flex: 1; }
 
 .hero-form button {
-    margin-top: 4px;
+    margin-top: clamp(10px, 1vw, 20px);
     background: #001834;
     color: #fff;
     border: none;
-    padding: clamp(14px, 1.1vw, 20px) 24px;
-    font-size: clamp(16px, 1.1vw, 22px);
-    font-weight: 700;
+    padding: 0;
+    height: clamp(46px, 3vw, 58px);
+    font-size: clamp(16px, 1.25vw, 24px);
+    font-weight: 600;
     letter-spacing: 0.5px;
     align-self: center;
     width: auto;
     min-width: clamp(220px, 18vw, 347px);
     cursor: pointer;
     font-family: 'Inter', sans-serif;
+    line-height: 1;
 }
 .hero-form button:hover { background: #002e5e; }
 
