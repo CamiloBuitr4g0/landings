@@ -61,11 +61,11 @@ ul { list-style: none; }
 /* ==================== HERO ==================== */
 .hero {
     position: relative;
-    min-height: 720px;
     background-image: url('assets/hero-bg.png');
     background-size: cover;
     background-position: center;
-    padding: 60px 40px 40px;
+    padding: 40px 40px 0;
+    overflow: hidden;
 }
 .hero::before {
     content: '';
@@ -77,31 +77,32 @@ ul { list-style: none; }
     max-width: 1600px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr 480px;
+    grid-template-columns: 1fr 520px;
     gap: 40px;
     align-items: start;
 }
 .hero-left {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding-top: 20px;
+    align-items: flex-start;
+    text-align: left;
 }
 .hero-title {
     font-family: 'Bebas Neue', sans-serif;
     font-weight: 400;
-    font-size: clamp(48px, 7vw, 110px);
+    font-size: clamp(44px, 6vw, 96px);
     line-height: 0.95;
     color: #fff;
     text-shadow: 0 4px 10px rgba(0,0,0,0.85);
     letter-spacing: 1px;
+    margin-bottom: 20px;
 }
 .hero-title span { color: var(--yellow); }
 .hero-couple {
     width: 100%;
-    max-width: 640px;
-    margin-top: 24px;
+    max-width: 620px;
+    margin: 0;
+    align-self: flex-start;
 }
 
 /* HERO FORM */
