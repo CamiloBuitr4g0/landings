@@ -117,23 +117,21 @@ ul { list-style: none; }
 }
 .hero-title span { color: var(--yellow); }
 .hero-couple {
-    flex: 1 1 auto;
-    width: auto;
-    max-width: 100%;
-    min-height: 0;
-    height: 100%;
-    object-fit: contain;
-    object-position: bottom center;
-    margin: 0;
+    width: 100%;
+    max-width: 700px;
+    height: auto;             /* natural height = grows past hero bottom */
+    margin-top: clamp(4px, 0.5vw, 12px);  /* tight under title */
     display: block;
+    /* Image extends past hero bottom; cropped by .hero overflow:hidden */
 }
 
-/* RIGHT: yellow form — compact to keep hero short */
+/* RIGHT: yellow form — fields evenly distributed, button at bottom */
 .hero-form {
     background: var(--yellow);
-    padding: clamp(16px, 1.4vw, 28px) clamp(18px, 1.5vw, 30px);
+    padding: clamp(20px, 1.8vw, 36px) clamp(20px, 1.6vw, 32px);
     display: flex;
     flex-direction: column;
+    justify-content: space-between;  /* evenly distribute groups + button */
     box-shadow: 0 8px 24px rgba(0,0,0,0.2);
     margin: 0;
     width: 100%;
@@ -141,22 +139,19 @@ ul { list-style: none; }
     align-self: stretch;
     box-sizing: border-box;
 }
+.hf-group {
+    display: flex;
+    flex-direction: column;
+}
 .hero-form label {
     display: block;
     font-family: 'Inter', sans-serif;
     font-size: clamp(14px, 1vw, 20px);
     font-weight: 700;
     color: #000;
-    margin: 0 0 clamp(4px, 0.4vw, 8px);
+    margin: 0 0 clamp(5px, 0.5vw, 10px);
     line-height: 1;
 }
-.hero-form label + input,
-.hero-form label + select,
-.hero-form label + textarea,
-.hero-form label + .phone-row {
-    margin-bottom: clamp(8px, 0.8vw, 16px);
-}
-
 .hero-form input,
 .hero-form textarea,
 .hero-form select {
@@ -174,7 +169,7 @@ ul { list-style: none; }
 }
 .hero-form textarea {
     resize: none;
-    height: clamp(60px, 5vw, 100px);
+    height: clamp(70px, 5.5vw, 110px);
     padding: 10px 12px;
     line-height: 1.4;
 }
@@ -190,18 +185,17 @@ ul { list-style: none; }
 .phone-row input { flex: 1; }
 
 .hero-form button {
-    margin-top: auto;          /* push to bottom of stretched form */
     background: #001834;
     color: #fff;
     border: none;
     padding: 0;
-    height: clamp(40px, 2.8vw, 54px);
+    height: clamp(42px, 2.8vw, 54px);
     font-size: clamp(14px, 1.05vw, 20px);
     font-weight: 600;
     letter-spacing: 0.5px;
     align-self: center;
     width: auto;
-    min-width: clamp(200px, 16vw, 320px);
+    min-width: clamp(220px, 18vw, 340px);
     cursor: pointer;
     font-family: 'Inter', sans-serif;
     line-height: 1;
