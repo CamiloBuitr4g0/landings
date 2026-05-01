@@ -59,12 +59,13 @@ ul { list-style: none; }
 .header-contact img { width: 22px; height: 22px; flex-shrink: 0; }
 
 /* ==================== HERO ==================== */
+/* Figma ref: 1920x824, title 120px, couple 750x591, form 624x696 */
 .hero {
     position: relative;
     background-image: url('assets/hero-bg.png');
     background-size: cover;
     background-position: center;
-    padding: 40px 40px 0;
+    padding: clamp(24px, 3vw, 48px) clamp(20px, 3vw, 60px) 0;
     overflow: hidden;
 }
 .hero::before {
@@ -74,60 +75,65 @@ ul { list-style: none; }
 }
 .hero-inner {
     position: relative;
-    max-width: 1600px;
+    max-width: 1760px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr 520px;
-    gap: 40px;
-    align-items: start;
+    /* Match Figma ratio: form is ~33% of 1920 = 624px */
+    grid-template-columns: 1fr minmax(340px, 33vw);
+    gap: clamp(16px, 2vw, 40px);
+    align-items: end;
 }
 .hero-left {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    text-align: left;
+    align-items: center;
+    text-align: center;
 }
 .hero-title {
     font-family: 'Bebas Neue', sans-serif;
     font-weight: 400;
-    font-size: clamp(44px, 6vw, 96px);
-    line-height: 0.95;
+    /* Figma: 120px at 1920vw = ~6.25vw, tone down for readability */
+    font-size: clamp(36px, 6.25vw, 120px);
+    line-height: 0.9;
     color: #fff;
     text-shadow: 0 4px 10px rgba(0,0,0,0.85);
     letter-spacing: 1px;
-    margin-bottom: 20px;
+    margin: 0 0 clamp(8px, 1vw, 20px);
+    width: 100%;
 }
 .hero-title span { color: var(--yellow); }
 .hero-couple {
-    width: 100%;
-    max-width: 620px;
+    /* Figma: 750px wide in a ~1920px hero = ~39vw */
+    width: clamp(280px, 39vw, 750px);
+    height: auto;
     margin: 0;
-    align-self: flex-start;
+    display: block;
 }
 
 /* HERO FORM */
 .hero-form {
     background: var(--yellow);
-    padding: 32px 28px;
+    padding: clamp(16px, 1.8vw, 36px) clamp(14px, 1.6vw, 32px);
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: clamp(4px, 0.5vw, 10px);
     box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    margin-top: 20px;
 }
 .hero-form label {
     font-family: 'Inter', sans-serif;
-    font-size: 18px;
+    font-size: clamp(13px, 1.25vw, 22px);
     font-weight: 600;
     color: #000;
-    margin-top: 8px;
+    margin-top: clamp(4px, 0.5vw, 10px);
 }
 .hero-form input,
 .hero-form textarea,
 .hero-form select {
     background: #fff;
     border: none;
-    padding: 14px 12px;
-    font-size: 16px;
+    padding: clamp(8px, 0.8vw, 16px) 12px;
+    font-size: clamp(13px, 1vw, 18px);
     color: #000;
     width: 100%;
     outline: none;
