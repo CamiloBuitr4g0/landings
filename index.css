@@ -845,61 +845,71 @@ textarea.input {
 }
 
 .lawyers-copy {
-  position: absolute;
-  left: 8px;
-  top: 132px;
-  width: 1625px;
-  font-size: 30px;
+  position: relative;
+  width: 100%;
+  padding: 8.25rem 0.5rem 0;
+  font-size: 1.875rem;
   font-weight: 400;
-  line-height: 39px;
+  line-height: 2.44rem;
+  text-align: center;
+}
+
+.lawyers-grid {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  margin-top: 3rem;
+  flex-wrap: wrap;
 }
 
 .lawyer-card {
-  position: absolute;
-  top: 405px;
-  width: 337px;
+  position: relative;
+  width: 21.06rem;
   text-align: center;
   overflow: visible;
+  flex-shrink: 0;
 }
 
 .photo-frame {
-  width: 337px;
-  height: 405px;
+  width: 21.06rem;
+  height: 25.31rem;
   overflow: visible;
   background: #f1f1f1;
   position: relative;
+  margin: 0 auto;
 }
 
 .lawyer-card .photo {
-  position: absolute;
+  position: relative;
   left: 0;
-  top: -54px;
-  width: 337px;
-  height: 459px;
+  top: -3.38rem;
+  width: 21.06rem;
+  height: 28.69rem;
   object-fit: cover;
   object-position: center top;
 }
 
 .james .photo {
-  height: 520px;
-  top: -115px;
+  height: 32.5rem;
+  top: -7.19rem;
 }
 
 .samuel .photo {
-  height: 459px;
-  top: -54px;
+  height: 28.69rem;
+  top: -3.38rem;
   object-position: center top;
 }
 
 .nadia .photo {
-  height: 459px;
-  top: -54px;
+  height: 28.69rem;
+  top: -3.38rem;
   object-position: center top;
 }
 
 .dagmar .photo {
-  height: 459px;
-  top: -54px;
+  height: 28.69rem;
+  top: -3.38rem;
   object-position: center top;
 }
 
@@ -987,12 +997,10 @@ textarea.input {
 }
 
 .consult {
-  left: 640px;
-  top: 4655px;
-  width: 641px;
-  height: 72px;
-  font-size: 36px;
+  position: relative;
+  font-size: 2.25rem;
   white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .stats {
@@ -1018,32 +1026,36 @@ textarea.input {
 }
 
 .stats h2 {
-  position: absolute;
-  left: 372px;
-  top: 37px;
-  width: 1239px;
+  position: relative;
+  width: 100%;
+  padding: 2.31rem 0;
   font-family: var(--display-font);
-  font-size: 110px;
+  font-size: clamp(3rem, 6vw, 6.88rem);
   font-weight: 400;
-  line-height: 117px;
+  line-height: 1.06;
   text-align: center;
 }
 
+.stats-content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
 .clients-icon {
-  position: absolute;
-  left: 200px;
-  top: 192px;
-  width: 122px;
-  height: 104px;
+  position: relative;
+  width: 7.63rem;
+  height: 6.5rem;
+  flex-shrink: 0;
 }
 
 .retirees {
-  position: absolute;
-  left: 349px;
-  top: 199px;
-  font-size: 45px;
-  font-weight: 300;
-  line-height: 45px;
+  position: relative;
+  font-size: 2.81rem;
+  flex-shrink: 0;
 }
 
 .retirees span {
@@ -1052,12 +1064,9 @@ textarea.input {
 }
 
 .rate {
-  position: absolute;
-  left: 1129px;
-  top: 233px;
-  font-size: 45px;
-  font-weight: 300;
-  line-height: 80px;
+  position: relative;
+  font-size: 2.81rem;
+  flex-shrink: 0;
 }
 
 .rate span {
@@ -1067,37 +1076,31 @@ textarea.input {
 }
 
 .language-icon {
-  position: absolute;
-  left: 200px;
-  top: 388px;
-  width: 122px;
-  height: 121px;
+  position: relative;
+  width: 7.63rem;
+  height: 6.5rem;
+  flex-shrink: 0;
 }
 
 .bilingual {
-  position: absolute;
-  left: 349px;
-  top: 449px;
-  font-size: 45px;
-  font-weight: 300;
+  position: relative;
+  font-size: 2.81rem;
+  flex-shrink: 0;
 }
 
 .experience-icon {
-  position: absolute;
-  left: 1143px;
-  top: 375px;
-  width: 139px;
-  height: 132px;
+  position: relative;
+  width: 7.63rem;
+  height: 6.5rem;
+  flex-shrink: 0;
 }
 
 .specialists {
-  position: absolute;
-  left: 1356px;
-  top: 417px;
-  width: 540px;
-  font-size: 45px;
+  position: relative;
+  font-size: 2.81rem;
   font-weight: 300;
-  line-height: 52px;
+  line-height: 3.25rem;
+  flex-shrink: 0;
 }
 
 .process {
@@ -1112,37 +1115,40 @@ textarea.input {
 
 .process p,
 .testimonials p {
-  position: absolute;
-  left: 0;
-  top: 142px;
-  width: 1548px;
-  font-size: 30px;
+  position: relative;
+  width: 100%;
+  padding: 8.88rem 0 0;
+  font-size: 1.875rem;
   font-weight: 400;
-  line-height: 41px;
+  line-height: 2.56rem;
+  text-align: center;
 }
 
 .process-mask {
-  position: absolute;
-  left: 96px;
-  top: 300px;
-  width: 1476px;
-  height: 1200px;
+  position: relative;
+  width: 100%;
+  max-width: 92.25rem;
+  height: auto;
+  min-height: 75rem;
   overflow: hidden;
+  margin: 18.75rem auto 0;
 }
 
 .process-mask img {
-  width: 1476px;
-  height: 1200px;
+  width: 100%;
+  height: auto;
+  min-height: 75rem;
   object-fit: cover;
 }
 
 .process-button {
-  left: 538px;
-  top: 1631px;
-  width: 571px;
-  height: 72px;
-  font-size: 36px;
+  position: relative;
+  width: 35.69rem;
+  height: 4.5rem;
+  font-size: 2.25rem;
   white-space: nowrap;
+  margin: 6.25rem auto 0;
+  display: block;
 }
 
 .testimonials {
@@ -1156,22 +1162,24 @@ textarea.input {
 }
 
 .reviews {
-  position: absolute;
-  left: 32px;
-  top: 266px;
-  width: 1586px;
-  height: 344px;
+  position: relative;
+  width: 100%;
+  max-width: 99.13rem;
+  height: auto;
+  min-height: 21.5rem;
   object-fit: cover;
+  margin: 16.63rem auto 0;
 }
 
 .video {
-  position: absolute;
-  left: 21px;
-  top: 679px;
-  width: 1578px;
-  height: 888px;
+  position: relative;
+  width: 100%;
+  max-width: 98.63rem;
+  height: auto;
+  min-height: 55.5rem;
   border: 0;
   display: block;
+  margin: 6.25rem auto 0;
 }
 
 .final-form {
