@@ -8,18 +8,52 @@
       gtag('js', new Date());
       gtag('config', 'AW-18101708079');
     </script>
+  
     <script>
       (function(){
-        function applyScale(){
-          var vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
-          var scale = vw / 1920;
-          document.documentElement.style.setProperty('--scale', scale);
-          // Adjust body height so scaled container doesn't leave empty space
-          var designHeight = 11812;
-          document.body.style.height = (designHeight * scale) + 'px';
+        var DESIGN_W = 1920;
+        var DESIGN_H = 11812;
+        // Capture initial devicePixelRatio to detect zoom later
+        var baseDPR = window.devicePixelRatio || 1;
+
+        function getEffectiveWidth(){
+          // Counter-act browser zoom: when user zooms in, DPR increases, innerWidth decreases.
+          // Multiplying innerWidth by (currentDPR/baseDPR) gives us a width that's stable under zoom.
+          var dpr = window.devicePixelRatio || 1;
+          return window.innerWidth * (dpr / baseDPR);
         }
-        window.addEventListener('resize', applyScale);
-        window.addEventListener('DOMContentLoaded', applyScale);
+
+        function applyScale(){
+          var w = getEffectiveWidth();
+          var scale = w / DESIGN_W;
+          document.documentElement.style.setProperty('--scale', scale);
+          document.body.style.height = (DESIGN_H * scale) + 'px';
+          document.body.style.width = (DESIGN_W * scale) + 'px';
+        }
+
+        // Only listen to actual window resize, not zoom.
+        // We detect "real resize" by checking if DPR stayed the same.
+        var lastDPR = baseDPR;
+        var lastW = window.innerWidth;
+        window.addEventListener('resize', function(){
+          var dpr = window.devicePixelRatio || 1;
+          var w = window.innerWidth;
+          // If DPR changed, it's a zoom - skip recalculation
+          if (Math.abs(dpr - lastDPR) > 0.01) {
+            lastDPR = dpr;
+            lastW = w;
+            return;
+          }
+          lastDPR = dpr;
+          lastW = w;
+          applyScale();
+        });
+
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', applyScale);
+        } else {
+          applyScale();
+        }
         applyScale();
       })();
     </script>
