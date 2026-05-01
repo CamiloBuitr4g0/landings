@@ -23,25 +23,31 @@
         </div>
     </header>
 
-    <!-- HERO -->
+    <!-- HERO (pixel-perfect Figma reproduction, 1920x824 stage) -->
     <section class="hero">
-        <div class="hero-inner">
-            <div class="hero-left">
-                <h1 class="hero-title">Retire in Panama with a<br><span>$1,000</span> Pension</h1>
-                <img class="hero-couple" src="assets/hero-couple.png" alt="Happy couple">
-            </div>
+        <div class="hero-stage">
+            <h1 class="hero-title">Retire in Panama with a <span>$1,000</span> Pension</h1>
+            <img class="hero-couple" src="assets/hero-couple.png" alt="Happy couple">
             <form class="hero-form">
-                <label>Full name</label>
-                <input type="text" required>
-                <label>Email</label>
-                <input type="email" required>
-                <label>Phone number</label>
-                <div class="phone-row">
-                    <select><option>+1</option><option>+507</option><option>+34</option><option>+44</option></select>
-                    <input type="tel" required>
+                <div class="hf-field hf-name">
+                    <label>Full name</label>
+                    <input type="text" required>
                 </div>
-                <label>Message</label>
-                <textarea rows="4"></textarea>
+                <div class="hf-field hf-email">
+                    <label>Email</label>
+                    <input type="email" required>
+                </div>
+                <div class="hf-field hf-phone">
+                    <label>Phone number</label>
+                    <div class="phone-row">
+                        <select><option>+1</option><option>+507</option><option>+34</option><option>+44</option></select>
+                        <input type="tel" required>
+                    </div>
+                </div>
+                <div class="hf-field hf-msg">
+                    <label>Message</label>
+                    <textarea></textarea>
+                </div>
                 <button type="submit">CHECK MY ELIGIBILITY NOW</button>
             </form>
         </div>
