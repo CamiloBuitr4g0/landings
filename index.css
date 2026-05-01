@@ -58,160 +58,115 @@ ul { list-style: none; }
 }
 .header-contact img { width: 22px; height: 22px; flex-shrink: 0; }
 
-/* ==================== HERO (PIXEL-PERFECT FIGMA) ==================== */
-/* Figma reference canvas: 1920x824. All values are % of these dimensions. */
+/* ==================== HERO ==================== */
 .hero {
     position: relative;
     width: 100%;
     background: url('assets/hero-bg.png') center/cover no-repeat;
     overflow: hidden;
 }
-.hero-stage {
+.hero-grid {
     position: relative;
-    width: 100%;
-    /* Maintain Figma 1920:824 aspect ratio */
-    aspect-ratio: 1920 / 824;
+    max-width: 1600px;
     margin: 0 auto;
-    /* Container query unit so children scale to width */
-    container-type: inline-size;
+    padding: 30px 40px 0;
+    display: grid;
+    grid-template-columns: 1fr minmax(300px, 36%);
+    column-gap: 30px;
+    align-items: end;
 }
 
-/* TITLE — Figma: top:168, left:calc(50%-352.5px), w:1034, h:208, fz:120, line:107 */
+/* LEFT: title (top) + couple (bottom) */
+.hero-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-self: stretch;
+    min-height: 100%;
+}
 .hero-title {
-    position: absolute;
-    top: 20.39%;        /* 168 / 824 */
-    left: 50%;
-    transform: translateX(-50%);
-    width: 53.85%;      /* 1034 / 1920 */
-    margin: 0;
-    padding: 0;
     font-family: 'Bebas Neue', sans-serif;
     font-weight: 400;
-    /* 120 / 1920 = 6.25cqw */
-    font-size: 6.25cqw;
-    line-height: 0.89;  /* 107/120 */
+    font-size: clamp(34px, 5.4vw, 90px);
+    line-height: 1;
     color: #fff;
-    text-align: center;
     text-shadow: 0 4px 10px rgba(0,0,0,0.85);
-    letter-spacing: 0.01em;
+    letter-spacing: 0.5px;
+    margin: 0;
+    padding-left: 20px;
 }
 .hero-title span { color: var(--yellow); }
-
-/* COUPLE — Figma: top:343, left:250, w:750, h:591 */
 .hero-couple {
-    position: absolute;
-    top: 41.62%;        /* 343 / 824 */
-    left: 13.02%;       /* 250 / 1920 */
-    width: 39.06%;      /* 750 / 1920 */
+    width: 100%;
+    max-width: 560px;
     height: auto;
-    object-fit: contain;
-    object-position: bottom center;
-    pointer-events: none;
+    margin: 20px auto 0;
+    display: block;
+    align-self: end;
 }
 
-/* FORM YELLOW BOX — Figma: top:188, left:1152, w:624, h:696 */
+/* RIGHT: yellow form */
 .hero-form {
-    position: absolute;
-    top: 22.82%;        /* 188 / 824 */
-    left: 60%;          /* 1152 / 1920 */
-    width: 32.5%;       /* 624 / 1920 */
-    height: 84.47%;     /* 696 / 824 */
     background: var(--yellow);
+    padding: 24px 22px;
+    display: flex;
+    flex-direction: column;
     box-shadow: 0 8px 24px rgba(0,0,0,0.2);
-    padding: 0;
-    margin: 0;
-    border: none;
+    margin-top: 20px;
 }
-/* Form fields all positioned absolutely inside the yellow box */
-.hf-field {
-    position: absolute;
-    /* horizontal: label/input start ~29/624=4.65% from left, end ~5%, so width ~90.4% */
-    left: 4.65%;
-    right: 4.97%;
-}
-.hf-field label {
-    display: block;
-    font-family: 'Neue Haas Grotesk Display Pro', 'Inter', sans-serif;
-    font-weight: 600;
+.hero-form label {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
     color: #000;
-    /* Figma label fz:24 / box width 624 = 3.85cqw scaled, but we want consistent → use cqw on stage */
-    font-size: 1.25cqw;  /* 24 / 1920 */
-    line-height: 1;
-    margin-bottom: 0.6cqw;
+    margin-bottom: 6px;
 }
-.hf-field input,
-.hf-field textarea,
-.hf-field select {
-    width: 100%;
+.hero-form label + input,
+.hero-form label + select,
+.hero-form label + textarea,
+.hero-form label + .phone-row { margin-bottom: 14px; }
+
+.hero-form input,
+.hero-form textarea,
+.hero-form select {
     background: #fff;
     border: none;
+    padding: 10px 12px;
+    font-size: 15px;
+    color: #000;
+    width: 100%;
     outline: none;
     border-radius: 0;
-    color: #000;
     font-family: 'Inter', sans-serif;
-    font-size: 1.25cqw;
-    padding: 0 0.8cqw;
     box-sizing: border-box;
 }
+.hero-form textarea { resize: none; min-height: 80px; }
 
-/* Field heights: input rectangles 64.156px / 696 box height = 9.22% of form height */
-.hf-field input,
-.hf-field select { height: 9.22%; }
-/* But field heights are anchored to the form, easier: use cqw */
-.hf-field input,
-.hf-field select {
-    height: 3.34cqw; /* 64 / 1920 */
-}
-
-/* FIELD POSITIONS — relative to form box (top values from Figma minus form top 188) */
-/* Full Name: label top:235-188=47, input top:254-188=66 */
-.hf-name      { top: 6.75%; }      /* 47 / 696 */
-.hf-name input { margin-top: 2.73%; } /* (66-47-32)/696 ≈ −1.3% but treat as gap */
-
-/* Email: label top:357-188=169, input top:376-188=188 */
-.hf-email     { top: 24.28%; }     /* 169 / 696 */
-.hf-email input { margin-top: 2.73%; }
-
-/* Phone: label top:485-188=297, inputs top:504-188=316 */
-.hf-phone     { top: 42.67%; }     /* 297 / 696 */
-.hf-phone .phone-row { margin-top: 2.73%; }
-
-/* Message: label top:613-188=425, textarea top:632-188=444, h:126 */
-.hf-msg       { top: 61.06%; }     /* 425 / 696 */
-.hf-msg textarea {
-    margin-top: 2.73%;
-    height: 6.56cqw;  /* 126 / 1920 */
-    min-height: 0;
-    resize: none;
-    padding: 0.8cqw;
-    line-height: 1.3;
-}
-
-/* PHONE ROW — country select 187.4 / 624 = 30%, gap 17/624 = 2.72%, phone field 360.5/624 = 57.77% */
 .phone-row {
     display: flex;
-    gap: 2.72%;
+    gap: 8px;
 }
-.phone-row select { width: 30%; }
-.phone-row input  { width: 67.28%; }
+.phone-row select {
+    flex: 0 0 110px;
+    background: #fff;
+    padding: 10px 8px;
+}
+.phone-row input { flex: 1; }
 
-/* SUBMIT BUTTON — Figma: top:789-188=601, left:1290-1152=138, w:347, h:58, bg:#001834 */
 .hero-form button {
-    position: absolute;
-    top: 86.35%;        /* 601 / 696 */
-    left: 22.12%;       /* 138 / 624 */
-    width: 55.61%;      /* 347 / 624 */
-    height: 8.33%;      /* 58 / 696 */
+    margin-top: 6px;
     background: #001834;
     color: #fff;
     border: none;
-    cursor: pointer;
-    font-family: 'Neue Haas Grotesk Display Pro', 'Inter', sans-serif;
-    font-weight: 600;
-    font-size: 1.25cqw;  /* 24 / 1920 */
+    padding: 14px 24px;
+    font-size: 16px;
+    font-weight: 700;
     letter-spacing: 0.5px;
-    padding: 0;
-    margin: 0;
+    align-self: center;
+    width: auto;
+    min-width: 240px;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
 }
 .hero-form button:hover { background: #002e5e; }
 
