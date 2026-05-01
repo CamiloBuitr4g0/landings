@@ -161,15 +161,17 @@ strong {
 .fit-stage {
   position: relative;
   width: 100vw;
-  height: 11280px;
-  overflow: hidden;
+  min-height: 100vh;
+  overflow-x: hidden;
   background: #ffffff;
 }
 
 .canvas {
   position: relative;
-  width: 1920px;
-  height: 11280px;
+  width: 100%;
+  max-width: 1920px;
+  min-height: 100vh;
+  margin: 0 auto;
   overflow: hidden;
   transform-origin: top left;
   background: #ffffff;
@@ -195,13 +197,17 @@ img {
 }
 
 .topbar {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 1920px;
-  height: 137px;
+  position: relative;
+  width: 100%;
+  max-width: 1920px;
+  height: 8.56rem;
   background: #ffffff;
   z-index: 5;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
 }
 
 .logo {
@@ -209,67 +215,58 @@ img {
 }
 
 .top-logo {
-  position: absolute;
-  left: 152px;
-  top: 27px;
-  width: 245px;
-  height: 75px;
+  width: 15.31rem;
+  height: 4.69rem;
+  flex-shrink: 0;
 }
 
 .top-email,
 .top-phone {
-  position: absolute;
-  top: 28px;
-  height: 63px;
-  font-size: 30px;
+  height: 3.94rem;
+  font-size: 1.875rem;
   font-weight: 400;
-  line-height: 83px;
+  line-height: 5.19rem;
   white-space: nowrap;
 }
 
 .top-email {
-  left: 787px;
+  margin-right: 1rem;
 }
 
 .top-phone {
-  left: 1334px;
+  margin-left: 1rem;
 }
 
 .mail-icon,
 .phone-icon {
-  position: absolute;
   object-fit: contain;
+  margin: 0 0.5rem;
 }
 
 .top-mail-icon {
-  left: 743px;
-  top: 57px;
-  width: 38px;
-  height: 29px;
+  width: 2.38rem;
+  height: 1.81rem;
 }
 
 .top-phone-icon {
-  left: 1306px;
-  top: 57px;
-  width: 29px;
-  height: 29px;
+  width: 1.81rem;
+  height: 1.81rem;
 }
 
 .hero {
-  position: absolute;
-  left: 0;
-  top: 140px;
-  width: 1920px;
-  height: 792px;
+  position: relative;
+  width: 100%;
+  height: 49.5rem;
   overflow: hidden;
+  margin-top: 0;
 }
 
 .hero-bg {
   position: absolute;
   left: 0;
   top: 0;
-  width: 1920px;
-  height: 792px;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   object-position: center center;
   transform: scaleX(-1);
@@ -289,14 +286,15 @@ img {
 
 .hero-title {
   position: absolute;
-  left: 160px;
-  top: 80px;
-  width: 960px;
-  height: 110px;
+  left: 10rem;
+  top: 5rem;
+  width: 60%;
+  max-width: 60rem;
   font-family: var(--display-font);
-  font-size: 120px;
+  font-size: clamp(3rem, 7.5vw, 7.5rem);
   font-weight: 400;
-  line-height: 107px;
+  line-height: 0.9;
+  height: auto;
   letter-spacing: 0.5px;
   color: #ffffff;
   text-align: left;
@@ -311,10 +309,10 @@ img {
 
 .hero-subtitle {
   position: absolute;
-  left: 160px;
-  top: 215px;
-  width: 850px;
-  height: 38px;
+  left: 10rem;
+  top: 12rem;
+  width: min(60%, 43.75rem);
+  height: auto;
   z-index: 2;
 }
 
@@ -786,52 +784,50 @@ textarea.input {
 }
 
 .awards {
-  position: absolute;
-  left: 0;
-  top: 2150px;
-  width: 1920px;
-  height: 270px;
+  position: relative;
+  width: 100%;
+  max-width: 1920px;
+  height: auto;
+  min-height: 16.88rem;
   background: #f3f3f3;
+  margin: 0 auto;
+  padding: 2rem 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
 }
 
 .awards img {
-  position: absolute;
+  position: relative;
   object-fit: contain;
+  flex-shrink: 0;
 }
 
 .awards img:nth-child(1) {
-  left: 76px;
-  top: 30px;
-  width: 238px;
-  height: 210px;
+  width: 14.88rem;
+  height: 13.13rem;
 }
 
 .awards img:nth-child(2) {
-  left: 433px;
-  top: 58px;
-  width: 307px;
-  height: 153px;
+  width: 19.19rem;
+  height: 9.56rem;
 }
 
 .awards img:nth-child(3) {
-  left: 842px;
-  top: 29px;
-  width: 212px;
-  height: 212px;
+  width: 13.25rem;
+  height: 13.25rem;
 }
 
 .awards img:nth-child(4) {
-  left: 1140px;
-  top: 55px;
-  width: 304px;
-  height: 159px;
+  width: 19rem;
+  height: 9.94rem;
 }
 
 .awards img:nth-child(5) {
-  left: 1518px;
-  top: 26px;
-  width: 324px;
-  height: 218px;
+  width: 16.13rem;
+  height: 13.13rem;
 }
 
 .lawyers {
@@ -2646,6 +2642,11 @@ footer {
 /* Tablet Styles (768px - 1023px) */
 @media (min-width: 768px) and (max-width: 1023px) {
   .fit-stage {
+    width: 100vw;
+    min-height: 100vh;
+  }
+
+  .canvas {
     width: 100%;
     max-width: 1024px;
     margin: 0 auto;
@@ -2653,92 +2654,67 @@ footer {
 
   .topbar {
     width: 100%;
-    height: 100px;
-    padding: 0 20px;
+    height: 6.25rem;
+    padding: 0 1.25rem;
   }
 
   .top-logo {
-    left: 20px;
-    width: 180px;
-    height: 55px;
-    top: 22px;
+    width: 11.25rem;
+    height: 3.44rem;
   }
 
-  .top-email {
-    left: 400px;
-    font-size: 22px;
-  }
-
+  .top-email,
   .top-phone {
-    left: 650px;
-    font-size: 22px;
+    font-size: 1.375rem;
+    line-height: 3.75rem;
   }
 
   .top-mail-icon {
-    left: 370px;
-    width: 28px;
-    height: 22px;
-    top: 42px;
+    width: 1.75rem;
+    height: 1.38rem;
   }
 
   .top-phone-icon {
-    left: 620px;
-    width: 22px;
-    height: 22px;
-    top: 42px;
+    width: 1.38rem;
+    height: 1.38rem;
   }
 
   .hero {
-    width: 100%;
-    height: 600px;
-    top: 100px;
-  }
-
-  .hero-bg {
-    width: 100%;
-    height: 600px;
+    height: 37.5rem;
   }
 
   .hero-title {
-    left: 40px;
-    top: 60px;
-    width: 80%;
-    font-size: 80px;
-    line-height: 70px;
-    height: auto;
+    left: 2.5rem;
+    top: 3.75rem;
+    font-size: clamp(2.5rem, 6vw, 5rem);
   }
 
   .hero-subtitle {
-    left: 40px;
-    top: 160px;
-    width: 80%;
-    max-width: 500px;
-    height: auto;
+    left: 2.5rem;
+    top: 10rem;
+    width: min(70%, 31.25rem);
   }
 
   .awards {
-    width: 100%;
-    height: auto;
-    padding: 30px 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    flex-wrap: wrap;
+    min-height: 12.5rem;
+    padding: 1.875rem 1.25rem;
+    gap: 1.25rem;
   }
 
   .awards img {
-    position: relative;
-    left: auto !important;
-    top: auto !important;
-    width: 120px !important;
-    height: 100px !important;
+    width: 7.5rem !important;
+    height: 6.25rem !important;
   }
 }
 
 /* Desktop Styles (1024px - 1439px) */
 @media (min-width: 1024px) and (max-width: 1439px) {
   .fit-stage {
+    width: 100vw;
+    min-height: 100vh;
+  }
+
+  .canvas {
     width: 100%;
     max-width: 1440px;
     margin: 0 auto;
@@ -2746,87 +2722,66 @@ footer {
 
   .topbar {
     width: 100%;
-    height: 120px;
+    height: 7.5rem;
   }
 
   .top-logo {
-    left: 80px;
-    width: 220px;
-    height: 67px;
-    top: 25px;
+    width: 13.75rem;
+    height: 4.19rem;
   }
 
-  .top-email {
-    left: 600px;
-    font-size: 26px;
-  }
-
+  .top-email,
   .top-phone {
-    left: 1000px;
-    font-size: 26px;
+    font-size: 1.625rem;
+    line-height: 4.38rem;
   }
 
   .top-mail-icon {
-    left: 560px;
-    width: 34px;
-    height: 26px;
-    top: 50px;
+    width: 2.13rem;
+    height: 1.63rem;
   }
 
   .top-phone-icon {
-    left: 960px;
-    width: 26px;
-    height: 26px;
-    top: 50px;
+    width: 1.63rem;
+    height: 1.63rem;
   }
 
   .hero {
-    width: 100%;
-    height: 700px;
-    top: 120px;
-  }
-
-  .hero-bg {
-    width: 100%;
-    height: 700px;
+    height: 43.75rem;
   }
 
   .hero-title {
-    left: 100px;
-    top: 70px;
-    width: 800px;
-    font-size: 100px;
-    line-height: 90px;
+    left: 6.25rem;
+    top: 4.38rem;
+    font-size: clamp(3rem, 7vw, 6.25rem);
   }
 
   .hero-subtitle {
-    left: 100px;
-    top: 180px;
-    width: 600px;
-    height: auto;
+    left: 6.25rem;
+    top: 11.25rem;
+    width: min(65%, 37.5rem);
   }
 
   .awards {
-    width: 100%;
-    height: 220px;
-    padding: 0 40px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+    min-height: 13.75rem;
+    padding: 0 2.5rem;
+    gap: 1.5rem;
   }
 
   .awards img {
-    position: relative;
-    left: auto !important;
-    top: auto !important;
-    width: 180px !important;
-    height: 160px !important;
+    width: 11.25rem !important;
+    height: 10rem !important;
   }
 }
 
 /* Large Desktop Styles (1440px+) */
 @media (min-width: 1440px) {
   .fit-stage {
+    width: 100vw;
+    min-height: 100vh;
+  }
+
+  .canvas {
     width: 100%;
     max-width: 1920px;
     margin: 0 auto;
@@ -2834,81 +2789,75 @@ footer {
 
   .topbar {
     width: 100%;
-    height: 137px;
+    height: 8.56rem;
   }
 
   .top-logo {
-    left: 152px;
-    width: 245px;
-    height: 75px;
-    top: 27px;
+    width: 15.31rem;
+    height: 4.69rem;
   }
 
-  .top-email {
-    left: 787px;
-    font-size: 30px;
-  }
-
+  .top-email,
   .top-phone {
-    left: 1334px;
-    font-size: 30px;
+    font-size: 1.875rem;
+    line-height: 5.19rem;
   }
 
   .top-mail-icon {
-    left: 743px;
-    width: 38px;
-    height: 29px;
-    top: 57px;
+    width: 2.38rem;
+    height: 1.81rem;
   }
 
   .top-phone-icon {
-    left: 1306px;
-    width: 29px;
-    height: 29px;
-    top: 57px;
+    width: 1.81rem;
+    height: 1.81rem;
   }
 
   .hero {
-    width: 100%;
-    height: 792px;
-    top: 137px;
-  }
-
-  .hero-bg {
-    width: 100%;
-    height: 792px;
+    height: 49.5rem;
   }
 
   .hero-title {
-    left: 160px;
-    top: 80px;
-    width: 960px;
-    font-size: 120px;
-    line-height: 107px;
+    left: 10rem;
+    top: 5rem;
+    font-size: clamp(4rem, 8vw, 7.5rem);
   }
 
   .hero-subtitle {
-    left: 160px;
-    top: 200px;
-    width: 700px;
-    height: auto;
+    left: 10rem;
+    top: 12rem;
+    width: min(60%, 43.75rem);
   }
 
   .awards {
-    width: 100%;
-    height: 270px;
-    padding: 0 76px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    min-height: 16.88rem;
+    padding: 0 4.75rem;
+    gap: 2rem;
   }
 
   .awards img {
-    position: relative;
-    left: auto !important;
-    top: auto !important;
-    width: 238px !important;
-    height: 210px !important;
+    width: 14.88rem !important;
+    height: 13.13rem !important;
+  }
+
+  .awards img:nth-child(2) {
+    width: 19.19rem !important;
+    height: 9.56rem !important;
+  }
+
+  .awards img:nth-child(3) {
+    width: 13.25rem !important;
+    height: 13.25rem !important;
+  }
+
+  .awards img:nth-child(4) {
+    width: 19rem !important;
+    height: 9.94rem !important;
+  }
+
+  .awards img:nth-child(5) {
+    width: 16.13rem !important;
+    height: 13.13rem !important;
   }
 }
 
