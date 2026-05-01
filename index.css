@@ -161,6 +161,7 @@ strong {
 .fit-stage {
   position: relative;
   width: 100vw;
+  height: auto;
   min-height: 100vh;
   overflow-x: hidden;
   background: #ffffff;
@@ -170,9 +171,10 @@ strong {
   position: relative;
   width: 100%;
   max-width: 1920px;
-  min-height: 100vh;
+  height: auto;
+  min-height: 112.8rem;
   margin: 0 auto;
-  overflow: hidden;
+  overflow: visible;
   transform-origin: top left;
   background: #ffffff;
 }
@@ -588,12 +590,15 @@ textarea.input {
 }
 
 .intro {
-  position: absolute;
-  left: 0;
-  top: 932px;
-  width: 1920px;
-  height: 212px;
+  position: relative;
+  width: 100%;
+  max-width: 1920px;
+  height: 13.25rem;
   background: #f3f3f3;
+  margin: 0 auto;
+  padding: 0 10.25rem;
+  display: flex;
+  align-items: center;
 }
 
 .floating-whatsapp {
@@ -613,11 +618,10 @@ textarea.input {
 }
 
 .intro-text {
-  position: absolute;
-  left: 164px;
-  top: 64px;
-  width: 1591px;
-  height: 84px;
+  position: relative;
+  width: 100%;
+  max-width: 99.44rem;
+  height: auto;
 }
 
 .intro-copy,
@@ -791,7 +795,7 @@ textarea.input {
   min-height: 16.88rem;
   background: #f3f3f3;
   margin: 0 auto;
-  padding: 2rem 0;
+  padding: 2rem 4.75rem;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -831,11 +835,13 @@ textarea.input {
 }
 
 .lawyers {
-  position: absolute;
-  left: 143px;
-  top: 3574px;
-  width: 1636px;
-  height: 988px;
+  position: relative;
+  width: 100%;
+  max-width: 1920px;
+  height: auto;
+  min-height: 61.75rem;
+  margin: 0 auto;
+  padding: 0 8.94rem;
 }
 
 .lawyers-copy {
@@ -990,11 +996,13 @@ textarea.input {
 }
 
 .stats {
-  position: absolute;
-  left: 0;
-  top: 4809px;
-  width: 1920px;
-  height: 585px;
+  position: relative;
+  width: 100%;
+  max-width: 1920px;
+  height: auto;
+  min-height: 31.25rem;
+  margin: 0 auto;
+  padding: 0 10.25rem;
   background: #ececec;
 }
 
@@ -1093,11 +1101,13 @@ textarea.input {
 }
 
 .process {
-  position: absolute;
-  left: 146px;
-  top: 5536px;
-  width: 1647px;
-  height: 1691px;
+  position: relative;
+  width: 100%;
+  max-width: 1920px;
+  height: auto;
+  min-height: 70.31rem;
+  margin: 0 auto;
+  padding: 0 10.25rem;
 }
 
 .process p,
@@ -1136,11 +1146,13 @@ textarea.input {
 }
 
 .testimonials {
-  position: absolute;
-  left: 146px;
-  top: 7351px;
-  width: 1647px;
-  height: 1545px;
+  position: relative;
+  width: 100%;
+  max-width: 1920px;
+  height: auto;
+  min-height: 64.53rem;
+  margin: 0 auto;
+  padding: 0 10.25rem;
 }
 
 .reviews {
@@ -1163,11 +1175,13 @@ textarea.input {
 }
 
 .final-form {
-  position: absolute;
-  left: 167px;
-  top: 8969px;
-  width: 1577px;
-  height: 422px;
+  position: relative;
+  width: 100%;
+  max-width: 1920px;
+  height: auto;
+  min-height: 43.75rem;
+  margin: 0 auto;
+  padding: 0 10.25rem;
   background: var(--yellow);
 }
 
@@ -1265,11 +1279,13 @@ textarea.input {
 }
 
 .location {
-  position: absolute;
-  left: 152px;
-  top: 9541px;
-  width: 1647px;
-  height: 1307px;
+  position: relative;
+  width: 100%;
+  max-width: 1920px;
+  height: auto;
+  min-height: 56.25rem;
+  margin: 0 auto;
+  padding: 0 10.25rem;
 }
 
 .address {
