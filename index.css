@@ -90,6 +90,8 @@ ul { list-style: none; }
     grid-template-columns: 1fr minmax(300px, 38%);
     column-gap: clamp(20px, 2.5vw, 50px);
     align-items: stretch;
+    /* Cap hero height: prevents couple from making it huge */
+    height: clamp(380px, 42vw, 720px);
 }
 
 /* LEFT: title (top) + couple (fills remaining space) */
@@ -188,7 +190,7 @@ ul { list-style: none; }
 .phone-row input { flex: 1; }
 
 .hero-form button {
-    margin-top: clamp(6px, 0.6vw, 14px);
+    margin-top: auto;          /* push to bottom of stretched form */
     background: #001834;
     color: #fff;
     border: none;
