@@ -1,503 +1,1723 @@
-/* ==================== RESET & BASE ==================== */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --default-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Ubuntu, "Helvetica Neue", Helvetica, Arial, "PingFang SC",
+    "Hiragino Sans GB", "Microsoft Yahei UI", "Microsoft Yahei",
+    "Source Han Sans CN", sans-serif;
+  /* Scale factor updated by JS based on viewport width vs 1920 design width */
+  --scale: 1;
+}
 
-html { scroll-behavior: smooth; }
+/* ===== Responsive scaling layer (added on top of original design) ===== */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+  background: #ffffff;
+}
 
 body {
-    font-family: 'Inter', -apple-system, Roboto, Helvetica, sans-serif;
-    color: #000;
-    background: #fff;
-    line-height: 1.5;
-    overflow-x: hidden;
+  /* Height is set dynamically by JS so scaled content doesn't leave empty space */
+  min-height: 100vh;
 }
 
-img { max-width: 100%; height: auto; display: block; }
-button { font-family: inherit; cursor: pointer; border: none; }
-input, textarea, select { font-family: inherit; font-size: 1rem; }
-ul { list-style: none; }
-
-/* Color tokens */
-:root {
-    --yellow: #FFCC4E;
-    --navy: #001834;
-    --blue: #0F3768;
-    --gray: #F3F3F3;
-    --gray-2: #A9A9A9;
+.main-container {
+  overflow: hidden;
 }
 
-.container {
-    width: 100%;
-    max-width: 1600px;
-    margin: 0 auto;
-    padding: 0 40px;
+.main-container,
+.main-container * {
+  box-sizing: border-box;
 }
 
-.center { text-align: center; display: flex; justify-content: center; }
-
-/* ==================== HEADER ==================== */
-.header {
-    background: #fff;
-    padding: 24px 0;
-}
-.header-inner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 24px;
-    flex-wrap: wrap;
-}
-.logo { width: 200px; height: auto; }
-.header-contact {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 18px;
-    font-weight: 500;
-    color: #000;
-    max-width: 600px;
-}
-.header-contact img { width: 22px; height: 22px; flex-shrink: 0; }
-
-/* ==================== HERO ==================== */
-.hero {
-    position: relative;
-    min-height: 720px;
-    background-image: url('https://api.builder.io/api/v1/image/assets/TEMP/add5c7e51c598025e0c12efd6ac17d64411bf419?placeholderIfAbsent=true');
-    background-size: cover;
-    background-position: center;
-    padding: 60px 40px 40px;
-}
-.hero::before {
-    content: '';
-    position: absolute; inset: 0;
-    background: rgba(0,0,0,0.15);
-}
-.hero-inner {
-    position: relative;
-    max-width: 1600px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 480px;
-    gap: 40px;
-    align-items: start;
-}
-.hero-left {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding-top: 20px;
-}
-.hero-title {
-    font-family: 'Bebas Neue', sans-serif;
-    font-weight: 400;
-    font-size: clamp(48px, 7vw, 110px);
-    line-height: 0.95;
-    color: #fff;
-    text-shadow: 0 4px 10px rgba(0,0,0,0.85);
-    letter-spacing: 1px;
-}
-.hero-title span { color: var(--yellow); }
-.hero-couple {
-    width: 100%;
-    max-width: 640px;
-    margin-top: 24px;
+input,
+select,
+textarea,
+button {
+  outline: 0;
 }
 
-/* HERO FORM */
-.hero-form {
-    background: var(--yellow);
-    padding: 32px 28px;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+.main-container {
+  position: relative;
+  width: 1920px;
+  height: 11812px;
+  margin: 0;
+  background: #ffffff;
+  overflow: hidden;
+  transform-origin: top left;
+  transform: scale(var(--scale));
 }
-.hero-form label {
-    font-family: 'Inter', sans-serif;
-    font-size: 18px;
-    font-weight: 600;
-    color: #000;
-    margin-top: 8px;
+.flex-row-a {
+  position: relative;
+  width: 1646.348px;
+  height: 77px;
+  margin: 27px 0 0 143.652px;
+  z-index: 124;
 }
-.hero-form input,
-.hero-form textarea,
-.hero-form select {
-    background: #fff;
-    border: none;
-    padding: 14px 12px;
-    font-size: 16px;
-    color: #000;
-    width: 100%;
-    outline: none;
-    border-radius: 0;
+.recurso {
+  position: absolute;
+  width: 14.86%;
+  height: 75.348px;
+  top: 0;
+  left: 0;
+  background: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-05-01/W6HMUUDVr8.png)
+    no-repeat center;
+  background-size: cover;
+  z-index: 100;
 }
-.hero-form textarea { resize: vertical; min-height: 100px; }
-.phone-row {
-    display: flex;
-    gap: 8px;
+.oceania-business-plaza {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  position: absolute;
+  width: 687px;
+  height: 63px;
+  top: 14px;
+  left: 959.348px;
+  color: #000000;
+  font-family: Neue Haas Grotesk Display Pro, var(--default-font-family);
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 60.94px;
+  text-align: right;
+  white-space: nowrap;
+  z-index: 101;
 }
-.phone-row select {
-    flex: 0 0 110px;
-    background: #fff;
-}
-.phone-row input { flex: 1; }
-.hero-form button {
-    margin-top: 20px;
-    background: var(--navy);
-    color: #fff;
-    padding: 16px 24px;
-    font-size: 16px;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    align-self: center;
-    width: 100%;
-    max-width: 320px;
-}
-.hero-form button:hover { background: #00264f; }
-
-/* WHATSAPP */
-.whatsapp {
-    position: fixed;
-    right: 24px;
-    bottom: 24px;
-    width: 70px;
-    height: 70px;
-    z-index: 100;
-    transition: transform .2s;
-}
-.whatsapp:hover { transform: scale(1.1); }
-.whatsapp img { width: 100%; height: 100%; }
-
-/* ==================== INTRO ==================== */
-.intro {
-    background: var(--gray);
-    padding: 60px 0;
-    text-align: center;
-}
-.intro p {
-    font-size: clamp(20px, 2.4vw, 36px);
-    font-weight: 500;
-    color: #000;
-    line-height: 1.4;
-    max-width: 1400px;
-    margin: 0 auto;
-}
-
-/* ==================== TWO-COL SECTION (BENEFITS / REQUIREMENTS) ==================== */
-.two-col-section {
-    padding: 80px 0;
-    background: #fff;
-}
-.two-col {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: center;
-}
-.two-col h2 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-weight: 400;
-    font-size: clamp(40px, 5.5vw, 80px);
-    color: var(--blue);
-    line-height: 0.95;
-    margin-bottom: 24px;
-    letter-spacing: 1px;
-}
-.col-img img { width: 100%; height: auto; }
-
-.benefit-list { display: flex; flex-direction: column; gap: 20px; }
-.benefit-list li {
-    font-size: 18px;
-    line-height: 1.5;
-    color: #000;
-    position: relative;
-    padding-left: 20px;
-}
-.benefit-list li::before {
-    content: '';
-    position: absolute;
-    left: 0; top: 10px;
-    width: 10px; height: 10px;
-    background: var(--blue);
-    border-radius: 2px;
-}
-.benefit-list strong { font-weight: 700; }
-.benefit-list span { font-weight: 400; }
-
-.benefit-list.light li { color: #fff; }
-.benefit-list.light li::before { background: #fff; }
-
-.muted {
-    margin-top: 20px;
-    font-size: 18px;
-    font-weight: 500;
-    color: #000;
-}
-
-/* Buttons */
-.btn {
-    display: inline-block;
-    padding: 16px 32px;
-    font-size: 18px;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    margin-top: 28px;
-    transition: all .2s;
-}
-.btn-navy { background: var(--blue); color: #fff; }
-.btn-navy:hover { background: var(--navy); }
-.btn-white { background: #fff; color: var(--blue); }
-.btn-white:hover { background: var(--gray); }
-
-/* ==================== AWARDS ==================== */
-.awards {
-    padding: 30px 0;
-    background: #fff;
-}
-.awards img { width: 100%; max-width: 1500px; margin: 0 auto; }
-
-/* ==================== NAVY (WHY WORK WITH US) ==================== */
-.navy-section {
-    background: var(--blue);
-    color: #fff;
-    padding: 80px 0;
-}
-.navy-section h2 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-weight: 400;
-    font-size: clamp(40px, 5.5vw, 80px);
-    color: #fff;
-    line-height: 0.95;
-    margin-bottom: 32px;
-    text-align: center;
-    letter-spacing: 1px;
-}
-.navy-section .benefit-list {
-    max-width: 1100px;
-    margin: 0 auto 40px;
-}
-
-/* ==================== WHY CHOOSE ==================== */
-.why-choose {
-    background: rgba(169,169,169,0.25);
-    padding: 70px 0;
-}
-.why-choose h2 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-weight: 400;
-    font-size: clamp(40px, 5.5vw, 80px);
-    text-align: center;
-    margin-bottom: 50px;
-    color: #000;
-    letter-spacing: 1px;
-}
-.stats-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 50px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-.stat {
-    display: flex;
-    align-items: center;
-    gap: 24px;
-    font-size: 22px;
-    color: #000;
-}
-.stat img { width: 100px; height: auto; flex-shrink: 0; }
-.stat .big {
-    font-size: 56px;
-    font-weight: 900;
-    color: var(--blue);
-    line-height: 1;
-    display: inline-block;
-}
-.stat .big.navy { color: var(--blue); }
-
-/* ==================== PROCESS ==================== */
-.process {
-    padding: 90px 0;
-    background: #fff;
-    text-align: center;
-}
-.process h2 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-weight: 400;
-    font-size: clamp(40px, 5.5vw, 80px);
-    color: var(--blue);
-    margin-bottom: 24px;
-    letter-spacing: 1px;
-}
-.process .lead {
-    font-size: 20px;
-    color: #000;
-    max-width: 1000px;
-    margin: 0 auto 50px;
-}
-.process-img {
-    width: 100%;
-    max-width: 1400px;
-    margin: 0 auto 40px;
-}
-
-/* ==================== TESTIMONIALS ==================== */
-.testimonials {
-    padding: 80px 0;
-    background: #fff;
-    text-align: center;
-}
-.testimonials h2 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-weight: 400;
-    font-size: clamp(40px, 5.5vw, 80px);
-    color: var(--blue);
-    margin-bottom: 30px;
-    letter-spacing: 1px;
-}
-.testi-strip { width: 100%; max-width: 1500px; margin: 0 auto 50px; }
-.testi-video {
-    width: 100%;
-    max-width: 900px;
-    margin: 0 auto 50px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-}
-.testi-form {
-    background: var(--yellow);
-    max-width: 1300px;
-    margin: 0 auto;
-    padding: 40px;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    text-align: left;
-}
-.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-.testi-form label {
-    display: block;
-    font-weight: 600;
-    margin-bottom: 8px;
-    color: #000;
-}
-.testi-form input,
-.testi-form select {
-    width: 100%;
-    padding: 14px 12px;
-    background: #fff;
-    border: none;
-    font-size: 16px;
-    outline: none;
-}
-
-/* ==================== LOCATION ==================== */
 .location {
-    padding: 80px 0;
-    background: #fff;
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  top: 27px;
+  left: 953.348px;
+  background: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-05-01/ipgp8vzfob.png)
+    no-repeat center;
+  background-size: contain;
+  z-index: 124;
 }
-.location h2 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-weight: 400;
-    font-size: clamp(40px, 5.5vw, 80px);
-    color: var(--blue);
-    margin-bottom: 30px;
-    letter-spacing: 1px;
+.flex-row-b {
+  position: relative;
+  width: 1955px;
+  height: 994px;
+  margin: 33px 0 0 -9px;
+  z-index: 103;
 }
-.location-info {
-    display: flex;
-    align-items: center;
-    gap: 24px;
-    font-size: 22px;
-    color: #000;
-    margin-bottom: 40px;
-    flex-wrap: wrap;
+.fondo-header-landing {
+  position: absolute;
+  width: 1920px;
+  height: 824px;
+  top: 0;
+  left: 9px;
+  background: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-05-01/47Et1xa66S.png)
+    no-repeat center;
+  background-size: cover;
+  z-index: 103;
+  backdrop-filter: blur(0);
 }
-.location-info strong { font-weight: 700; }
-.vsep {
-    width: 2px;
-    height: 60px;
-    background: #000;
+.retire-panama-pension {
+  position: absolute;
+  width: 1034px;
+  height: 208px;
+  top: 58px;
+  left: 50%;
+  font-family: Bebas Neue, var(--default-font-family);
+  font-size: 120px;
+  font-weight: 400;
+  line-height: 107px;
+  text-align: center;
+  transform: translate(-83.27%, 0);
+  z-index: 104;
 }
-.map {
-    width: 100%;
-    max-width: 1100px;
-    margin: 0 auto 40px;
-    box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+.retire-panama {
+  position: relative;
+  color: #ffffff;
+  font-family: Bebas Neue, var(--default-font-family);
+  font-size: 120px;
+  font-weight: 400;
+  line-height: 107px;
+  text-align: center;
 }
-
-/* ==================== FOOTER ==================== */
-.footer {
-    background: var(--navy);
-    color: #fff;
-    padding: 70px 0;
+.pension {
+  position: relative;
+  color: #ffcc4e;
+  font-family: Bebas Neue, var(--default-font-family);
+  font-size: 120px;
+  font-weight: 400;
+  line-height: 107px;
+  text-align: center;
 }
-.footer-inner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 24px;
-    flex-wrap: wrap;
+.pension-1 {
+  position: relative;
+  color: #ffffff;
+  font-family: Bebas Neue, var(--default-font-family);
+  font-size: 120px;
+  font-weight: 400;
+  line-height: 107px;
+  text-align: center;
 }
-.footer-logo { width: 240px; height: auto; }
-.footer-contact {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 18px;
-    font-weight: 500;
-    color: #fff;
-    max-width: 600px;
+.rectangle {
+  position: absolute;
+  width: 623.995px;
+  height: 696px;
+  top: 78px;
+  left: 1143px;
+  font-size: 0px;
+  background: #ffcc4e;
+  z-index: 107;
 }
-.footer-contact img { width: 22px; height: 22px; flex-shrink: 0; }
-
-/* ==================== RESPONSIVE ==================== */
-@media (max-width: 1100px) {
-    .hero-inner {
-        grid-template-columns: 1fr;
-        gap: 32px;
-    }
-    .hero-form { max-width: 480px; margin: 0 auto; width: 100%; }
-    .two-col { grid-template-columns: 1fr; gap: 40px; }
-    .stats-grid { gap: 32px; }
+.full-name {
+  display: block;
+  position: relative;
+  height: 32.078px;
+  margin: 31.106px 0 0 29.582px;
+  color: #000000;
+  font-family: Neue Haas Grotesk Display Pro, var(--default-font-family);
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32.078px;
+  text-align: left;
+  white-space: nowrap;
+  z-index: 113;
 }
-
-@media (max-width: 768px) {
-    .container { padding: 0 20px; }
-    .header-inner { flex-direction: column; text-align: center; gap: 16px; }
-    .header-contact { font-size: 15px; justify-content: center; text-align: center; }
-    .logo { width: 160px; }
-
-    .hero { padding: 40px 16px 32px; min-height: auto; }
-    .hero-title { font-size: 44px; }
-    .hero-form { padding: 24px 18px; }
-
-    .intro { padding: 40px 0; }
-    .intro p { font-size: 18px; }
-
-    .two-col-section { padding: 50px 0; }
-    .two-col h2,
-    .navy-section h2,
-    .why-choose h2,
-    .process h2,
-    .testimonials h2,
-    .location h2 { font-size: 40px; }
-
-    .benefit-list li { font-size: 16px; }
-
-    .stats-grid { grid-template-columns: 1fr; }
-    .stat { flex-direction: column; text-align: center; }
-    .stat .big { font-size: 44px; }
-
-    .grid-2 { grid-template-columns: 1fr; gap: 16px; }
-    .testi-form { padding: 24px 18px; }
-
-    .location-info { flex-direction: column; align-items: flex-start; font-size: 18px; }
-    .vsep { width: 60px; height: 2px; }
-
-    .footer-inner { flex-direction: column; text-align: center; }
-    .footer-contact { justify-content: center; font-size: 15px; }
-
-    .whatsapp { width: 56px; height: 56px; right: 16px; bottom: 16px; }
-
-    .btn { padding: 14px 24px; font-size: 16px; width: 100%; max-width: 320px; }
+.rectangle-2 {
+  position: relative;
+  width: 564.069px;
+  height: 64.156px;
+  margin: 2.916px 0 0 29.488px;
+  background: #ffffff;
+  z-index: 108;
+}
+.email {
+  display: block;
+  position: relative;
+  height: 32.078px;
+  margin: 22.357px 0 0 29.488px;
+  color: #000000;
+  font-family: Neue Haas Grotesk Display Pro, var(--default-font-family);
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32.078px;
+  text-align: left;
+  white-space: nowrap;
+  z-index: 114;
+}
+.rectangle-3 {
+  position: relative;
+  width: 564.069px;
+  height: 64.156px;
+  margin: 2.916px 0 0 29.488px;
+  background: #ffffff;
+  z-index: 109;
+}
+.phone-number {
+  display: block;
+  position: relative;
+  height: 32.078px;
+  margin: 29.162px 0 0 29.488px;
+  color: #000000;
+  font-family: Neue Haas Grotesk Display Pro, var(--default-font-family);
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32.078px;
+  text-align: left;
+  white-space: nowrap;
+  z-index: 116;
+}
+.flex-row-fa {
+  position: relative;
+  width: 564.069px;
+  height: 64.156px;
+  margin: 2.916px 0 0 29.488px;
+  z-index: 117;
+}
+.rectangle-4 {
+  position: absolute;
+  width: 187.389px;
+  height: 64.156px;
+  top: 0;
+  left: 0;
+  background: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-05-01/QDYjgNkCzv.png)
+    no-repeat center;
+  background-size: cover;
+  z-index: 111;
+}
+.polygon {
+  position: relative;
+  width: 19.024px;
+  height: 19.441px;
+  margin: 18.469px 0 0 155.999px;
+  background: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-05-01/rcnf9FsD3r.png)
+    no-repeat center;
+  background-size: cover;
+  z-index: 119;
+}
+.rectangle-5 {
+  position: absolute;
+  width: 360.509px;
+  height: 64.156px;
+  top: 0;
+  left: 203.559px;
+  background: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-05-01/CmGsugY3pE.png)
+    no-repeat center;
+  background-size: cover;
+  z-index: 112;
+}
+.plus {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: absolute;
+  height: 32.078px;
+  top: 14.581px;
+  left: 9.512px;
+  color: rgba(0, 0, 0, 0.5);
+  font-family: Neue Haas Grotesk Display Pro, var(--default-font-family);
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32.078px;
+  text-align: left;
+  white-space: nowrap;
+  z-index: 118;
+}
+.country-code {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: absolute;
+  height: 32.078px;
+  top: 14.581px;
+  left: 11.415px;
+  color: rgba(0, 0, 0, 0.5);
+  font-family: Neue Haas Grotesk Display Pro, var(--default-font-family);
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32.078px;
+  text-align: left;
+  white-space: nowrap;
+  z-index: 117;
+}
+.message {
+  display: block;
+  position: relative;
+  height: 32.078px;
+  margin: 29.162px 0 0 29.582px;
+  color: #000000;
+  font-family: Neue Haas Grotesk Display Pro, var(--default-font-family);
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32.078px;
+  text-align: left;
+  white-space: nowrap;
+  z-index: 115;
+}
+.rectangle-6 {
+  position: relative;
+  width: 564.069px;
+  height: 126.369px;
+  margin: 2.916px 0 0 29.488px;
+  background: #ffffff;
+  z-index: 110;
+}
+.rectangle-7 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 347px;
+  height: 58px;
+  margin: 30.397px 0 0 137.995px;
+  background: #001834;
+  z-index: 122;
+}
+.check-eligibility {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+  width: 324px;
+  height: 34px;
+  color: #ffffff;
+  font-family: Neue Haas Grotesk Display Pro, var(--default-font-family);
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 34px;
+  text-align: center;
+  white-space: nowrap;
+  z-index: 122;
+}
+.pensionado-abuelos-felices {
+  position: absolute;
+  width: 750px;
+  height: 591px;
+  top: 233px;
+  left: 241px;
+  background: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-05-01/4QjOoNe4x6.png)
+    no-repeat center;
+  background-size: cover;
+  z-index: 105;
+}
+.whatsapp-logo {
+  position: absolute;
+  width: 116px;
+  height: 116px;
+  top: 697px;
+  left: 1780px;
+  background: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-05-01/ynb7jLEvjD.png)
+    no-repeat center;
+  background-size: cover;
+  z-index: 126;
+}
+.rectangle-8 {
+  position: absolute;
+  width: 130px;
+  height: 130px;
+  top: 72px;
+  left: 0;
+  background: #d9d9d9;
+  z-index: 102;
+}
+.rectangle-9 {
+  position: absolute;
+  width: 1946px;
+  height: 212px;
+  top: 782px;
+  left: 9px;
+  background: #f3f3f3;
+  z-index: 98;
+}
+.retirement-visa {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  position: absolute;
+  width: 1651px;
+  height: 95px;
+  top: 81px;
+  left: 130px;
+  color: #000000;
+  font-family: Neue Haas Grotesk Display Pro, var(--default-font-family);
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 48px;
+  text-align: center;
+  z-index: 123;
+}
+.rectangle-a {
+  position: absolute;
+  width: 272px;
+  height: 40px;
+  top: 133px;
+  left: 665px;
+  background: #ffcc4e;
+  z-index: 99;
+}
+.flex-row-fd {
+  position: relative;
+  width: 1541px;
+  height: 823px;
+  margin: 194px 0 0 249px;
+  z-index: 96;
+}
+.image {
+  position: absolute;
+  width: 779px;
+  height: 823px;
+  top: 0;
+  left: 762px;
+  background: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-05-01/XDg4MEb1tE.png)
+    no-repeat center;
+  background-size: cover;
+  z-index: 96;
+}
+.know-your-benefits {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: absolute;
+  height: 112px;
+  top: 13.962px;
+  left: 27px;
+  color: #0f3768;
+  font-family: Bebas Neue, var(--default-font-family);
+  font-size: 93px;
+  font-weight: 400;
+  line-height: 111.6px;
+  text-align: left;
+  white-space: nowrap;
+  z-index: 94;
+}
+.permanent-residency-panama {
+  position: absolute;
+  width: 705.325px;
+  height: 540.015px;
+  top: 142.819px;
+  left: 26.976px;
+  font-family: Neue Haas Grotesk Display Pro, var(--default-font-family);
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 33.6px;
+  text-align: justified;
+  z-index: 95;
+}
+.permanent-residency-panama-b {
+  position: relative;
+  color: #000000;
+  font-family: Neue Haas Grotesk Display Pro, var(--default-font-family);
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 33.6px;
+  text-align: justified;
+}
+.panama-pensionado-visa {
+  position: relative;
+  color: #000000;
+  font-family: Neue Haas Grotesk Display Pro, var(--default-font-family);
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 33.6px;
+  text-align: justified;
+}
+.permanent-residency-panama-c {
+  position: relative;
+  color: #000000;
+  font-family: Neue Haas Grotesk Display Pro, var(--default-font-family);
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 33.6px;
+  text-align: justified;
+}
+.panama-pensionado-visa-d {
+  position: relative;
+  color: #000000;
+  font-family: Neue Haas Grotesk Display Pro, var(--default-font-family);
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 33.6px;
+  text-align: justified;
+}
+.permanent-residency-panama-e {
+  position: relative;
+  color: #000000;
+  font-family: Neue Haas Grotesk Display Pro, var(--default-font-family);
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 33.6px;
+  text-align: justified;
+}
+.panama-pensionado-visa-f {
+  position: relative;
+  color: #000000;
+  font-family: Neue Haas Grotesk Display Pro, var(--default-font-family);
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 33.6px;
+  text-align: justified;
+}
+.permanent-residency-panama-10 {
+  position: relative;
+  color: #000000;
+  font-family: Neue Haas Grotesk Display Pro, var(--default-font-family);
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 33.6px;
+  text-align: justified;
+}
+.panama-pensionado-visa-11 {
+  position: relative;
+  color: #000000;
+  font-family: Neue Haas Grotesk Display Pro, var(--default-font-family);
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 33.6px;
+  text-align: justified;
+}
+.rectangle-12 {
+  position: absolute;
+  width: 16.107px;
+  height: 15.259px;
+  top: 155px;
+  left: 0;
+  background: #0f3768;
+  z-index: 90;
+}
+.rectangle-13 {
+  position: absolute;
+  width: 16.107px;
+  height: 15.259px;
+  top: 324px;
+  left: 0;
+  background: #0f3768;
+  z-index: 91;
+}
+.rectangle-14 {
+  position: absolute;
+  width: 16.107px;
+  height: 15.259px;
+  top: 459px;
+  left: 0;
+  background: #0f3768;
+  z-index: 92;
+}
+.rectangle-15 {
+  position: absolute;
+  width: 16.107px;
+  height: 15.259px;
+  top: 595px;
+  left: 0;
+  background: #0f3768;
+  z-index: 93;
+}
+.certificados {
+  position: relative;
+  width: 1932px;
+  height: 353px;
+  margin: 194px 0 0 -4px;
+  background: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-05-01/PSmCAhUxyL.png)
+    no-repeat center;
+  background-size: cover;
+  z-index: 88;
+}
+.requisitos {
+  position: relative;
+  width: 1990px;
+  height: 1206px;
+  margin: 87px 0 0 0;
+  z-index: 75;
+  overflow: hidden;
+}
+.flex-column-df {
+  position: absolute;
+  width: 788px;
+  height: 968px;
+  top: 16px;
+  left: 1064px;
+  z-index: 83;
+}
+.landing-playa-panama {
+  position: relative;
+  width: 671px;
+  height: 884px;
+  margin: 84px 0 0 55px;
+  background: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-05-01/1Sne3HpLbn.png)
+    no-repeat center;
+  background-size: cover;
+  z-index: 82;
+}
+.abuelo-anotando {
+  position: absolute;
+  width: 788px;
+  height: 968px;
+  top: 0;
+  left: 0;
+  background: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-05-01/e71nr9Dv2g.png)
+    no-repeat center;
+  background-size: cover;
+  z-index: 83;
+}
+.flex-column-d {
+  position: absolute;
+  width: 752.394px;
+  height: 851.559px;
+  top: 150.441px;
+  left: 275px;
+  font-size: 0px;
+  z-index: 84;
+}
+.qualify {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: relative;
+  width: 752.394px;
+  height: 164px;
+  margin: 0 0 0 0;
+  color: #0f3768;
+  font-family: Bebas Neue, var(--default-font-family);
+  font-size: 93px;
+  font-weight: 400;
+  line-height: 81.993px;
+  text-align: left;
+  z-index: 80;
+}
+.basic-requirements {
+  position: relative;
+  width: 721.985px;
+  height: 547.353px;
+  margin: 0.21px 0 0 2.671px;
+  font-family: Neue Haas Grotesk Display Pro, var(--default-font-family);
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 33.6px;
+  text-align: justified;
+  z-index: 81;
+}
+.good-health {
+  position: relative;
+  color: #000000;
+  font-family: Neue Haas Grotesk Display Pro, var(--default-font-family);
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 33.6px;
+  text-align: justified;
+}
+.valid-passport {
+  position: relative;
+  color: #000000;
+  font-family: Neue Haas Grotesk Display Pro, var(--default-font-family);
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 33.6px;
+  text-align: justified;
+}
+.good-health-16 {
+  position: relative;
+  color: #000000;
+  font-family: Neue Haas Grotesk Display Pro, var(--default-font-family);
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 33.6px;
+  text-align: justified;
+}
+.valid-passport-17 {
+  position: relative;
+  color: #000000;
+  font-family: Neue Haas Grotesk Display Pro, var(--default-font-family);
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 33.6px;
+  text-align: justified;
+}
+.good-health-18 {
+  position: relative;
+  color: #000000;
+  font-family: Neue Haas Grotesk Display Pro, var(--default-font-family);
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 33.6px;
+  text-align: justified;
+}
+.valid-passport-19 {
+  position: relative;
+  color: #000000;
+  font-family: Neue Haas Grotesk Display Pro, var(--default-font-family);
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 33.6px;
+  text-align: justified;
+}
+.good-health-1a {
+  position: relative;
+  color: #000000;
+  font-family: Neue Haas Grotesk Display Pro, var(--default-font-family);
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 33.6px;
+  text-align: justified;
+}
+.valid-passport-1b {
+  position: relative;
+  color: #000000;
+  font-family: Neue Haas Grotesk Display Pro, var(--default-font-family);
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 33.6px;
+  text-align: justified;
+}
+.good-health-1c {
+  position: relative;
+  color: #000000;
+  font-family: Neue Haas Grotesk Display Pro, var(--default-font-family);
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 33.6px;
+  text-align: justified;
+}
+.check-eligibility-1d {
+  position: relative;
+  width: 558px;
+  height: 58px;
+  margin: 82px 0 0 0;
+  font-size: 0px;
+  z-index: 84;
+  overflow: visible auto;
+}
+.check-eligibility-1e {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 535px;
+  height: 34px;
+  margin: 13px 0 0 11px;
+  color: #ffffff;
+  font-family: Neue Haas Grotesk Display Pro, var(--default-font-family);
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 34px;
+  text-align: center;
+  white-space: nowrap;
+  z-index: 86;
+}
+.rectangle-1f {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: #0f3768;
+  z-index: 85;
+}
+.flex-column {
+  position: absolute;
+  width: 16.507px;
+  height: 389.639px;
+  top: 357px;
+  left: 249px;
+  z-index: 79;
+}
+.rectangle-20 {
+  position: relative;
+  width: 16.507px;
+  height: 15.639px;
+  margin: 0 0 0 0;
+  background: #0f3768;
+  z-index: 76;
+}
+.rectangle-21 {
+  position: relative;
+  width: 16.507px;
+  height: 15.639px;
+  margin: 119.361px 0 0 0;
+  background: #0f3768;
+  z-index: 77;
+}
+.rectangle-22 {
+  position: relative;
+  width: 16.507px;
+  height: 15.639px;
+  margin: 121.361px 0 0 0;
+  background: #0f3768;
+  z-index: 78;
+}
+.rectangle-23 {
+  position: relative;
+  width: 16.507px;
+  height: 15.639px;
+  margin: 86.361px 0 0 0;
+  background: #0f3768;
+  z-index: 79;
+}
+.frame {
+  position: relative;
+  width: 2037px;
+  height: 1298px;
+  margin: 50px 0 0 -47px;
+  font-size: 0px;
+  z-index: 60;
+  overflow: hidden;
+}
+.legal-team {
+  display: block;
+  position: relative;
+  height: 89px;
+  margin: 68px 0 0 177px;
+  color: #ffffff;
+  font-family: Bebas Neue, var(--default-font-family);
+  font-size: 93px;
+  font-weight: 400;
+  line-height: 88.2px;
+  text-align: left;
+  white-space: nowrap;
+  z-index: 66;
+}
+.schedule-consultation {
+  position: relative;
+  width: 617px;
+  height: 60px;
+  margin: 442px 0 0 699px;
+  font-size: 0px;
+  z-index: 68;
+  overflow: visible auto;
+}
+.schedule-consultation-24 {
+  display: block;
+  position: relative;
+  height: 33px;
+  margin: 15px 0 0 24px;
+  color: #0f3768;
+  font-family: Neue Haas Grotesk Display Pro, var(--default-font-family);
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 33px;
+  text-align: left;
+  white-space: nowrap;
+  z-index: 70;
+}
+.rectangle-25 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: #ffffff;
+  z-index: 69;
+}
+.abogados {
+  position: absolute;
+  width: 2037px;
+  height: 1935px;
+  top: 0;
+  left: 0;
+  z-index: 61;
+}
+.rectangle-26 {
+  position: absolute;
+  width: 2037px;
+  height: 1298px;
+  top: 0;
+  left: 0;
+  background: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-05-01/eEtrXve12b.png)
+    no-repeat center;
+  background-size: cover;
+  z-index: 62;
+}
+.rectangle-27 {
+  position: absolute;
+  width: 2037px;
+  height: 1298px;
+  top: 0;
+  left: 0;
+  background: #0f3768;
+  z-index: 63;
+}
+.rectangle-28 {
+  position: absolute;
+  width: 2037px;
+  height: 696px;
+  top: 0;
+  left: 0;
+  background: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-05-01/iitAaA2Noq.png)
+    no-repeat center;
+  background-size: cover;
+  z-index: 64;
+}
+.group {
+  position: absolute;
+  width: 1918px;
+  height: 1449px;
+  top: 486px;
+  left: 42px;
+  background: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-05-01/LwLuMLnpFh.png)
+    no-repeat center;
+  background-size: cover;
+  z-index: 65;
+}
+.panama-law {
+  position: absolute;
+  width: 1647px;
+  height: 348px;
+  top: 190px;
+  left: 177px;
+  font-family: Neue Haas Grotesk Display Pro, var(--default-font-family);
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 32.923px;
+  text-align: justified;
+  z-index: 67;
+}
+.panama-law-29 {
+  position: relative;
+  color: #ffffff;
+  font-family: Neue Haas Grotesk Display Pro, var(--default-font-family);
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 32.923px;
+  text-align: justified;
+}
+.filed-attorney {
+  position: relative;
+  color: #ffffff;
+  font-family: Neue Haas Grotesk Display Pro, var(--default-font-family);
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 32.923px;
+  text-align: justified;
+}
+.panama-law-2a {
+  position: relative;
+  color: #ffffff;
+  font-family: Neue Haas Grotesk Display Pro, var(--default-font-family);
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 32.923px;
+  text-align: justified;
+}
+.filed-attorney-2b {
+  position: relative;
+  color: #ffffff;
+  font-family: Neue Haas Grotesk Display Pro, var(--default-font-family);
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 32.923px;
+  text-align: justified;
+}
+.panama-law-2c {
+  position: relative;
+  color: #ffffff;
+  font-family: Neue Haas Grotesk Display Pro, var(--default-font-family);
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 32.923px;
+  text-align: justified;
+}
+.filed-attorney-2d {
+  position: relative;
+  color: #ffffff;
+  font-family: Neue Haas Grotesk Display Pro, var(--default-font-family);
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 32.923px;
+  text-align: justified;
+}
+.panama-law-2e {
+  position: relative;
+  color: #ffffff;
+  font-family: Neue Haas Grotesk Display Pro, var(--default-font-family);
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 32.923px;
+  text-align: justified;
+}
+.filed-attorney-2f {
+  position: relative;
+  color: #ffffff;
+  font-family: Neue Haas Grotesk Display Pro, var(--default-font-family);
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 32.923px;
+  text-align: justified;
+}
+.rectangle-30 {
+  position: absolute;
+  width: 16.507px;
+  height: 15.639px;
+  top: 197px;
+  left: 151px;
+  background: #ffffff;
+  z-index: 71;
+}
+.rectangle-31 {
+  position: absolute;
+  width: 16.507px;
+  height: 15.639px;
+  top: 298px;
+  left: 151px;
+  background: #ffffff;
+  z-index: 72;
+}
+.rectangle-32 {
+  position: absolute;
+  width: 16.507px;
+  height: 15.639px;
+  top: 397px;
+  left: 151px;
+  background: #ffffff;
+  z-index: 73;
+}
+.rectangle-33 {
+  position: absolute;
+  width: 16.507px;
+  height: 15.639px;
+  top: 496px;
+  left: 151px;
+  background: #ffffff;
+  z-index: 74;
+}
+.flex-row-f {
+  position: relative;
+  width: 1993.296px;
+  height: 581.006px;
+  margin: 216px 0 0 -36px;
+  font-size: 0px;
+  z-index: 58;
+  overflow: visible auto;
+}
+.why-choose-up-consulting {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  position: relative;
+  width: 1186.815px;
+  height: 112.072px;
+  margin: 35.441px 0 0 380.795px;
+  color: #000000;
+  font-family: Bebas Neue, var(--default-font-family);
+  font-size: 93px;
+  font-weight: 400;
+  line-height: 111.6px;
+  text-align: center;
+  white-space: nowrap;
+  z-index: 55;
+}
+.rectangle-34 {
+  position: absolute;
+  width: 1993.296px;
+  height: 581.006px;
+  top: 0;
+  left: 50%;
+  background: rgba(169, 168, 168, 0.7);
+  transform: translate(-50%, 0);
+  opacity: 0.2;
+  z-index: 48;
+  box-shadow: 0.99px 9.932px 14.103px 0 rgba(0, 0, 0, 0.24);
+}
+.image-35 {
+  position: absolute;
+  width: 116.998px;
+  height: 99.503px;
+  top: 183.913px;
+  left: 226.576px;
+  background: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-05-01/9LNhHqtnxC.png)
+    no-repeat center;
+  background-size: cover;
+  z-index: 58;
+}
+.clients {
+  position: relative;
+  width: 116.922px;
+  height: 99.568px;
+  margin: 0 0 0 0;
+  z-index: 57;
+}
+.retirees-successfully-assisted {
+  position: absolute;
+  width: 523px;
+  height: 98px;
+  top: 190.618px;
+  left: 369.301px;
+  font-family: Neue Haas Grotesk Display Pro, var(--default-font-family);
+  font-size: 43.10465621948242px;
+  font-weight: 400;
+  line-height: 43.105px;
+  text-align: left;
+  text-overflow: initial;
+  white-space: nowrap;
+  z-index: 49;
+}
+.plus-500 {
+  position: relative;
+  color: #000000;
+  font-family: Neue Haas Grotesk Display Pro, var(--default-font-family);
+  font-size: 57.472877502441406px;
+  font-weight: 400;
+  line-height: 57.473px;
+  text-align: left;
+}
+.retirees-successfully-assisted-36 {
+  position: relative;
+  color: #000000;
+  font-family: Neue Haas Grotesk Display Pro, var(--default-font-family);
+  font-size: 43.10465621948242px;
+  font-weight: 400;
+  line-height: 43.105px;
+  text-align: left;
+}
+.text-2e {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: absolute;
+  height: 77px;
+  top: 223.187px;
+  left: 1116.448px;
+  color: #0f3768;
+  font-family: Neue Haas Grotesk Display Pro, var(--default-font-family);
+  font-size: 76.63050842285156px;
+  font-weight: 900;
+  line-height: 76.631px;
+  text-align: left;
+  white-space: nowrap;
+  z-index: 56;
+}
+.approval-success-rate {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: absolute;
+  height: 43px;
+  top: 237.555px;
+  left: 1360.708px;
+  color: #000000;
+  font-family: Neue Haas Grotesk Display Pro, var(--default-font-family);
+  font-size: 43.10465621948242px;
+  font-weight: 400;
+  line-height: 43px;
+  text-align: left;
+  white-space: nowrap;
+  z-index: 50;
+}
+.experience {
+  position: absolute;
+  width: 132.894px;
+  height: 126.68px;
+  top: 359.206px;
+  left: 1152.847px;
+  background: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-05-01/Zitb5zjUgt.png)
+    no-repeat center;
+  background-size: cover;
+  z-index: 54;
+}
+.language {
+  position: absolute;
+  width: 116.993px;
+  height: 115.774px;
+  top: 371.658px;
+  left: 226.576px;
+  background: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-05-01/w1XtjKYB0V.png)
+    no-repeat center;
+  background-size: cover;
+  z-index: 53;
+}
+.experts-panama-pensionado-visa {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: absolute;
+  width: 395.605px;
+  height: 86.209px;
+  top: 399.437px;
+  left: 1360.708px;
+  color: #000000;
+  font-family: Neue Haas Grotesk Display Pro, var(--default-font-family);
+  font-size: 43.10465621948242px;
+  font-weight: 400;
+  line-height: 43.105px;
+  text-align: left;
+  text-overflow: initial;
+  z-index: 51;
+  overflow: hidden;
+}
+.bilingual-support {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: absolute;
+  height: 43px;
+  top: 430.089px;
+  left: 369.301px;
+  color: #000000;
+  font-family: Neue Haas Grotesk Display Pro, var(--default-font-family);
+  font-size: 43.10465621948242px;
+  font-weight: 400;
+  line-height: 43px;
+  text-align: left;
+  white-space: nowrap;
+  z-index: 52;
+}
+.process-delivering-results {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  position: relative;
+  width: 1661px;
+  height: 77px;
+  margin: 218.994px 0 0 129px;
+  color: #0f3768;
+  font-family: Bebas Neue, var(--default-font-family);
+  font-size: 93px;
+  font-weight: 400;
+  line-height: 77px;
+  text-align: center;
+  white-space: nowrap;
+  z-index: 40;
+}
+.flex-row-aa {
+  position: relative;
+  width: 1661px;
+  height: 56px;
+  margin: 37px 0 0 129px;
+  z-index: 42;
+  overflow: visible auto;
+}
+.rectangle-37 {
+  position: relative;
+  width: 268px;
+  height: 40px;
+  margin: 1px 0 0 1259px;
+  background: #ffcc4e;
+  z-index: 39;
+}
+.clear-overview-process {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  position: absolute;
+  width: 1661px;
+  height: 56px;
+  top: 0;
+  left: 0;
+  color: #000000;
+  font-family: Neue Haas Grotesk Display Pro, var(--default-font-family);
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 41px;
+  text-align: center;
+  white-space: nowrap;
+  z-index: 42;
+}
+.rectangle-38 {
+  position: relative;
+  width: 1476px;
+  height: 1200px;
+  margin: 70px 0 0 222px;
+  background: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-05-01/NQ5cJQUXQN.png)
+    no-repeat center;
+  background-size: cover;
+  z-index: 46;
+}
+.rectangle-39 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 540px;
+  height: 60px;
+  margin: 102px 0 0 690px;
+  background: #0f3768;
+  z-index: 45;
+}
+.start-process-today {
+  flex-shrink: 0;
+  position: relative;
+  height: 33px;
+  color: #ffffff;
+  font-family: Neue Haas Grotesk Display Pro, var(--default-font-family);
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 33px;
+  text-align: left;
+  white-space: nowrap;
+  z-index: 45;
+}
+.clients-saying-about-us {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  position: relative;
+  width: 1661px;
+  height: 77px;
+  margin: 194px 0 0 129px;
+  color: #0f3768;
+  font-family: Bebas Neue, var(--default-font-family);
+  font-size: 93px;
+  font-weight: 400;
+  line-height: 77px;
+  text-align: center;
+  white-space: nowrap;
+  z-index: 33;
+}
+.flex-row-ead {
+  position: relative;
+  width: 1591px;
+  height: 434px;
+  margin: 25px 0 0 164px;
+  z-index: 32;
+}
+.rectangle-3a {
+  position: absolute;
+  width: 1586px;
+  height: 344px;
+  top: 0;
+  left: 50%;
+  background: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-05-01/15T8kjmev9.png)
+    no-repeat center;
+  background-size: cover;
+  transform: translate(-50.16%, 0);
+  z-index: 18;
+}
+.image-3b {
+  position: absolute;
+  width: 1586px;
+  height: 344px;
+  top: 90px;
+  left: 50%;
+  transform: translate(-49.84%, 0);
+  z-index: 32;
+}
+.client-testimonial-expat-panama {
+  position: relative;
+  width: 1578px;
+  height: 888px;
+  margin: 0 0 0 158px;
+  background: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-05-01/X7UepR775m.png)
+    no-repeat center;
+  background-size: cover;
+  z-index: 34;
+}
+.rectangle-3c {
+  position: relative;
+  width: 1577px;
+  height: 422px;
+  margin: 56px 0 0 158px;
+  background: #ffcc4e;
+  z-index: 19;
+  overflow: visible auto;
+}
+.flex-row-ba {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  width: 870.491px;
+  height: 32.185px;
+  margin: 31px 0 0 59.582px;
+  z-index: 26;
+}
+.full-name-3d {
+  flex-shrink: 0;
+  position: relative;
+  height: 32.078px;
+  color: #000000;
+  font-family: Neue Haas Grotesk Display Pro, var(--default-font-family);
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32.078px;
+  text-align: left;
+  white-space: nowrap;
+  z-index: 25;
+}
+.email-3e {
+  flex-shrink: 0;
+  position: relative;
+  height: 32.078px;
+  color: #000000;
+  font-family: Neue Haas Grotesk Display Pro, var(--default-font-family);
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32.078px;
+  text-align: left;
+  white-space: nowrap;
+  z-index: 26;
+}
+.flex-row-a-3f {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  width: 1447px;
+  height: 64px;
+  margin: 2.941px 0 0 59.488px;
+  z-index: 21;
+}
+.rectangle-40 {
+  flex-shrink: 0;
+  position: relative;
+  width: 673px;
+  height: 64px;
+  background: #ffffff;
+  z-index: 20;
+}
+.rectangle-41 {
+  flex-shrink: 0;
+  position: relative;
+  width: 672px;
+  height: 64px;
+  background: #ffffff;
+  z-index: 21;
+}
+.flex-row-fae {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  width: 1134.474px;
+  height: 32.078px;
+  margin: 39.874px 0 0 59.488px;
+  z-index: 28;
+}
+.phone-number-42 {
+  flex-shrink: 0;
+  position: relative;
+  height: 32.078px;
+  color: #000000;
+  font-family: Neue Haas Grotesk Display Pro, var(--default-font-family);
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32.078px;
+  text-align: left;
+  white-space: nowrap;
+  z-index: 28;
+}
+.message-43 {
+  flex-shrink: 0;
+  position: relative;
+  height: 32.078px;
+  color: #000000;
+  font-family: Neue Haas Grotesk Display Pro, var(--default-font-family);
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32.078px;
+  text-align: left;
+  white-space: nowrap;
+  z-index: 27;
+}
+.flex-row-f-44 {
+  position: relative;
+  width: 1446.512px;
+  height: 64.156px;
+  margin: 2.916px 0 0 59.488px;
+  z-index: 29;
+}
+.rectangle-45 {
+  position: absolute;
+  width: 187.389px;
+  height: 64.156px;
+  top: 0;
+  left: 0;
+  background: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-05-01/A7DgFsJa3F.png)
+    no-repeat center;
+  background-size: cover;
+  z-index: 23;
+}
+.polygon-46 {
+  position: relative;
+  width: 19.024px;
+  height: 19.441px;
+  margin: 18.469px 0 0 155.999px;
+  background: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-05-01/mC5VwawE0z.png)
+    no-repeat center;
+  background-size: cover;
+  z-index: 31;
+}
+.rectangle-47 {
+  position: absolute;
+  width: 469px;
+  height: 64px;
+  top: 0.01px;
+  left: 203.512px;
+  background: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-05-01/jkT3XNsuCK.png)
+    no-repeat center;
+  background-size: cover;
+  z-index: 24;
+}
+.plus-48 {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: absolute;
+  height: 32.078px;
+  top: 14.575px;
+  left: 9.559px;
+  color: rgba(0, 0, 0, 0.5);
+  font-family: Neue Haas Grotesk Display Pro, var(--default-font-family);
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32.078px;
+  text-align: left;
+  white-space: nowrap;
+  z-index: 30;
+}
+.rectangle-49 {
+  position: absolute;
+  width: 672px;
+  height: 64px;
+  top: 0.01px;
+  left: 774.512px;
+  background: #ffffff;
+  z-index: 22;
+}
+.country-code-4a {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: absolute;
+  height: 32.078px;
+  top: 14.581px;
+  left: 11.415px;
+  color: rgba(0, 0, 0, 0.5);
+  font-family: Neue Haas Grotesk Display Pro, var(--default-font-family);
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32.078px;
+  text-align: left;
+  white-space: nowrap;
+  z-index: 29;
+}
+.rectangle-4b {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 379px;
+  height: 60px;
+  margin: 55.849px 0 0 613px;
+  background: #0f3768;
+  z-index: 37;
+}
+.become-a-client {
+  flex-shrink: 0;
+  position: relative;
+  height: 33px;
+  color: #ffffff;
+  font-family: Neue Haas Grotesk Display Pro, var(--default-font-family);
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 33px;
+  text-align: left;
+  white-space: nowrap;
+  z-index: 37;
+}
+.our-location {
+  display: block;
+  position: relative;
+  height: 76.917px;
+  margin: 201px 0 0 143px;
+  color: #0f3768;
+  font-family: Bebas Neue, var(--default-font-family);
+  font-size: 93px;
+  font-weight: 400;
+  line-height: 76.917px;
+  text-align: left;
+  white-space: nowrap;
+  z-index: 6;
+}
+.flex-row-b-4c {
+  position: relative;
+  width: 735px;
+  height: 83px;
+  margin: 30.083px 0 0 143px;
+  z-index: 10;
+}
+.office-panama-city {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: absolute;
+  width: 361px;
+  height: 71px;
+  top: 0;
+  left: 0;
+  color: #000000;
+  font-family: Neue Haas Grotesk Display Pro, var(--default-font-family);
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 36px;
+  text-align: left;
+  z-index: 8;
+}
+.tower-san-francisco {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: absolute;
+  width: 361px;
+  height: 83px;
+  top: 0;
+  left: 374px;
+  color: #000000;
+  font-family: Neue Haas Grotesk Display Pro, var(--default-font-family);
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 36px;
+  text-align: left;
+  text-overflow: initial;
+  z-index: 9;
+  overflow: hidden;
+}
+.vector {
+  position: absolute;
+  width: 2px;
+  height: 70px;
+  top: 2px;
+  left: 350px;
+  background: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-05-01/9B59qWWFTu.png)
+    no-repeat center;
+  background-size: cover;
+  z-index: 10;
+}
+.panama-location-maps {
+  position: relative;
+  width: 1126.8px;
+  height: 674.1px;
+  margin: 60px 0 0 403px;
+  background: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-05-01/AH6aSSSbdU.png)
+    no-repeat center;
+  background-size: 100% 100%;
+  z-index: 12;
+}
+.rectangle-4d {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 727px;
+  height: 60px;
+  margin: 83.9px 0 0 603px;
+  background: #0f3768;
+  z-index: 15;
+}
+.book-online-consultation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+  width: 694px;
+  height: 33px;
+  color: #ffffff;
+  font-family: Neue Haas Grotesk Display Pro, var(--default-font-family);
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 33px;
+  text-align: center;
+  white-space: nowrap;
+  z-index: 15;
+}
+.rectangle-4e {
+  position: relative;
+  width: 2016px;
+  height: 277px;
+  margin: 216px 0 0 -39px;
+  background: #001834;
+  z-index: 1;
+}
+.recurso-4f {
+  position: absolute;
+  width: 15.18%;
+  height: 94px;
+  top: 77px;
+  left: 8.38%;
+  background: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-05-01/fx3CW9aJgD.png)
+    no-repeat center;
+  background-size: cover;
+  z-index: 2;
+}
+.oceania-business-plaza-50 {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  position: absolute;
+  width: 954px;
+  height: 63px;
+  top: 107px;
+  left: 875px;
+  color: #ffffff;
+  font-family: Neue Haas Grotesk Display Pro, var(--default-font-family);
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 60.94px;
+  text-align: right;
+  white-space: nowrap;
+  z-index: 3;
+}
+.location-51 {
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  top: 121px;
+  left: 1136px;
+  background: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2026-05-01/w0umV4yD5R.png)
+    no-repeat center;
+  background-size: contain;
+  z-index: 4;
 }
