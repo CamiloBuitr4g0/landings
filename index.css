@@ -117,12 +117,15 @@ ul { list-style: none; }
 }
 .hero-title span { color: var(--yellow); }
 .hero-couple {
+    flex: 1 1 0;
     width: 100%;
     max-width: 700px;
-    height: auto;             /* natural height = grows past hero bottom */
-    margin-top: clamp(4px, 0.5vw, 12px);  /* tight under title */
+    height: 100%;             /* fill column space after title */
+    min-height: 0;
+    object-fit: cover;        /* square image cropped to fit column */
+    object-position: center 25%;  /* show heads near top */
+    margin-top: clamp(4px, 0.5vw, 12px);
     display: block;
-    /* Image extends past hero bottom; cropped by .hero overflow:hidden */
 }
 
 /* RIGHT: yellow form — fields evenly distributed, button at bottom */
