@@ -259,9 +259,33 @@ ul { list-style: none; }
 
 /* ==================== NAVY (WHY WORK WITH US) ==================== */
 .navy-section {
-    background: var(--blue);
+    position: relative;
     color: #fff;
-    padding: 80px 0;
+    padding: 80px 0 0;
+    background:
+        linear-gradient(rgba(15,55,104,0.88), rgba(15,55,104,0.95)),
+        url('https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=1920&q=80');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+.team-photos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: end;
+    justify-items: center;
+    gap: 0;
+    max-width: 1400px;
+    margin: 60px auto 0;
+    padding: 0 20px;
+}
+.team-photos img {
+    width: 100%;
+    max-width: 340px;
+    height: auto;
+    display: block;
+    object-fit: contain;
 }
 .navy-section h2 {
     font-family: 'Bebas Neue', sans-serif;
@@ -498,6 +522,8 @@ ul { list-style: none; }
     .footer-contact { justify-content: center; font-size: 15px; }
 
     .whatsapp { width: 56px; height: 56px; right: 16px; bottom: 16px; }
+
+    .team-photos { grid-template-columns: repeat(2, 1fr); gap: 10px; }
 
     .btn { padding: 14px 24px; font-size: 16px; width: 100%; max-width: 320px; }
 }
